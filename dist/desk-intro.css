@@ -1,0 +1,19 @@
+.desk-intro-pending #desk-canvas{visibility:hidden}
+.desk-intro-pending header,.desk-intro-pending .desk-heading,.desk-intro-pending .desk-caption,.desk-intro-pending #desk-stage>:not(canvas),.desk-intro-pending .home-projects,.desk-intro-pending footer{opacity:0}
+.desk-intro-pending body,.desk-intro-playing body{pointer-events:none}
+.desk-intro-playing #desk-stage{overflow:hidden;isolation:isolate}
+.desk-intro-playing #desk-canvas,.desk-intro-screen{transform-origin:0 0;will-change:transform}
+.desk-intro-screen{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:4;font-family:Arial,sans-serif}
+.desk-intro-skip{position:fixed;right:24px;top:16px;z-index:1000;pointer-events:auto;background:none;color:#9299a1;border:0;box-shadow:none;padding:10px 12px;font:12px Arial,sans-serif;letter-spacing:.03em;cursor:pointer}
+.desk-intro-skip:focus-visible{outline:2px solid #7160b5;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.desk-intro-screen,.desk-intro-skip{display:none}.desk-intro-pending #desk-canvas{visibility:visible}.desk-intro-pending header,.desk-intro-pending .desk-heading,.desk-intro-pending .desk-caption,.desk-intro-pending #desk-stage>:not(canvas),.desk-intro-pending .home-projects,.desk-intro-pending footer{opacity:1}}
+
+/* Blur only the periphery during the pull-back; the screen centre stays sharp. */
+.desk-intro-edge{position:absolute;inset:0;z-index:5;pointer-events:none;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);mask-image:radial-gradient(ellipse at center,transparent 40%,#000 95%);-webkit-mask-image:radial-gradient(ellipse at center,transparent 40%,#000 95%)}
+
+.desk-intro-fullscreen{position:fixed;inset:0;z-index:100;overflow:hidden;pointer-events:none;background:var(--bg,#181c23)}
+.desk-intro-frame{position:absolute}.desk-intro-frame #desk-canvas{position:absolute;inset:0;display:block}
+
+.intro-replay{background:none;border:0;padding:4px 0;color:var(--muted);font:11px Arial,sans-serif;cursor:pointer}.intro-replay:hover{color:var(--accent)}.intro-replay:focus-visible{outline:2px solid var(--accent);outline-offset:4px}.intro-replay:disabled{opacity:.45;cursor:default}
+.desk-intro-playing body,.desk-intro-playing header,.desk-intro-playing #desk-stage{transition:background-color 1s ease-in-out,color 1s ease-in-out}
+.desk-caption{position:relative}.intro-replay{position:absolute;right:0;bottom:0}

@@ -9,7 +9,7 @@ const zh=()=>document.documentElement.lang==='zh-CN';
 const say=(en,cn)=>zh()?cn:en;
 let renderer;
 try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'low-power'});}catch{
- stage.classList.add('has-error');loading.textContent=say('The 3D view is unavailable. Use the top navigation to explore.','当前设备无法显示三维场景，请使用顶部导航浏览。');
+ window.deskIntro?.finish();stage.classList.add('has-error');loading.textContent=say('The 3D view is unavailable. Use the top navigation to explore.','当前设备无法显示三维场景，请使用顶部导航浏览。');
 }
 if(renderer) init().catch(()=>{stage.classList.add('has-error');loading.hidden=false;loading.textContent=say('The desk could not load. All pages are available using the top navigation.','书桌暂时无法加载，你仍可使用顶部导航访问全部页面。');});
 
@@ -64,7 +64,7 @@ async function init(){
  const monitor=item('monitor','01','Projects','项目','/projects/',.9,-1.05,[-.20,2.35,.12]);
  monitor.scale.setScalar(1.3);
  box(monitor,1.02,.06,.7,0,.035,.05,silver);box(monitor,.19,.72,.15,0,.4,-.06,silver);
- box(monitor,2.45,1.47,.13,0,1.4,0,dark);plane(monitor,2.37,1.39,0,1.4,.074,new THREE.MeshBasicMaterial({map:screenTex('Selected projects','Designs, experiments & things in progress')}));
+ box(monitor,2.45,1.47,.13,0,1.4,0,dark);const monitorScreen=plane(monitor,2.37,1.39,0,1.4,.074,new THREE.MeshBasicMaterial({map:screenTex('Selected projects','Designs, experiments & things in progress')}));
  
  const cameraBody=mat('#202223',.88);const photo=item('camera','03','Photography','摄影','/other-work/photography/',-4.35,1.05,[.05,1.15,.2]);photo.scale.setScalar(.85);photo.rotation.y=.05;
  box(photo,1.04,.58,.42,0,.34,0,cameraBody);box(photo,1.05,.12,.43,0,.64,0,silver);box(photo,.35,.17,.33,-.06,.74,-.015,cameraBody);
@@ -230,10 +230,11 @@ async function init(){
  let windowBlend=0;function setTexture(tx){const token=++windowBlend;if(transitionMat.map&&transitionMat.map!==viewMat.map)transitionMat.map.dispose();transitionMat.map=null;transitionMat.opacity=0;viewMat.color.set('#ffffff');if(!viewMat.map||reduced.matches){viewMat.map?.dispose();viewMat.map=tx;viewMat.needsUpdate=true;return;}transitionMat.map=tx;transitionMat.needsUpdate=true;const start=performance.now();function blend(t){if(token!==windowBlend)return;const p=Math.min(1,(t-start)/800);transitionMat.opacity=p*p*(3-2*p);if(p<1)requestAnimationFrame(blend);else{viewMat.map.dispose();viewMat.map=tx;viewMat.needsUpdate=true;transitionMat.map=null;transitionMat.opacity=0;}}requestAnimationFrame(blend);}
  function save(value){try{localStorage.setItem('weiyi-window-illustrated-v1',JSON.stringify(value));return true;}catch{status.textContent=say('Preview updated, but browser storage is unavailable.','预览已更新，但浏览器无法保存。');return false;}}
  function fadeWindow(to){return new Promise(resolve=>{if(reduced.matches){viewMat.opacity=to;resolve();return;}const from=viewMat.opacity,start=performance.now();function step(t){const p=Math.min(1,(t-start)/300);viewMat.opacity=from+(to-from)*p;if(p<1)requestAnimationFrame(step);else resolve();}requestAnimationFrame(step);});}
- async function chooseMood(mood,persist=true){if(mood!=='night')mood='day';if(persist&&mood===currentMood)return;currentMood=mood;stage.dataset.mood=mood;document.documentElement.dataset.theme=mood;try{localStorage.setItem('weiyi-theme',mood);}catch{}applyLamp(persist?800:0);const src=customImage||('/images/window-editorial-city-'+mood+'.webp');await chooseImage(src,false,mood);viewMat.opacity=1;if(persist&&save({mood,image:customImage}))status.textContent=say('Saved in this browser.','已保存在此浏览器。');}
+ async function chooseMood(mood,persist=true,lightingDuration=persist?800:0){if(mood!=='night')mood='day';if(persist&&mood===currentMood)return;const src=customImage||('/images/window-editorial-city-'+mood+'.webp');await chooseImage(src,false,mood);currentMood=mood;stage.dataset.mood=mood;document.documentElement.dataset.theme=mood;if(persist)try{localStorage.setItem('weiyi-theme',mood);}catch{}applyLamp(lightingDuration);viewMat.opacity=1;if(persist&&save({mood,image:customImage}))status.textContent=say('Saved in this browser.','已保存在此浏览器。');}
  async function chooseImage(src,persist=false,mood=null){const token=++imageToken;return new Promise(resolve=>{new THREE.TextureLoader().load(src,tx=>{if(token!==imageToken){tx.dispose();resolve(false);return;}tx.colorSpace=THREE.SRGBColorSpace;const ratio=tx.image.width/tx.image.height,target=6.4/3.3;if(ratio>target){tx.repeat.x=target/ratio;tx.offset.x=(1-tx.repeat.x)/2;}else{tx.repeat.y=ratio/target;tx.offset.y=(1-tx.repeat.y)/2;}if(src.startsWith('/images/window-editorial-')){tx.repeat.multiplyScalar(.60);tx.offset.x=(1-tx.repeat.x)/2;tx.offset.y=0;}setTexture(tx);document.querySelectorAll('#window-dialog button[data-mood]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mood===mood)));if(persist&&save({image:src}))status.textContent=say('Your view is saved in this browser.','你的窗景已保存在此浏览器。');resolve(true);},undefined,()=>{status.textContent=say('This image could not be opened. Try another JPG, PNG or WebP.','无法读取图片，请换一张 JPG、PNG 或 WebP。');resolve(false);});});}
- async function siteDefault(){let mode=config.windowMood||'day';try{mode=localStorage.getItem('weiyi-theme')||mode;}catch{}await chooseMood(mode,false);}
- await siteDefault();try{const saved=JSON.parse(localStorage.getItem('weiyi-window-illustrated-v1')||'null');if(saved?.image)customImage=saved.image;if(saved?.mood||customImage)await chooseMood(saved.mood||currentMood,false);}catch{}
+ let introPreference=config.windowMood||'day';
+ async function siteDefault(){let mode=config.windowMood||'day';try{mode=localStorage.getItem('weiyi-theme')||mode;}catch{}introPreference=mode;await chooseMood(window.deskIntro?.active?'night':mode,false);}
+ await siteDefault();try{const saved=JSON.parse(localStorage.getItem('weiyi-window-illustrated-v1')||'null');if(saved?.mood)introPreference=saved.mood;if(saved?.image)customImage=saved.image;if(saved?.mood||customImage)await chooseMood(window.deskIntro?.active?'night':saved.mood||currentMood,false);}catch{}
  const dialog=document.querySelector('#window-dialog');document.querySelector('#edit-window').addEventListener('click',()=>dialog.showModal());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
 
  const upload=document.querySelector('#window-image');
@@ -260,6 +261,20 @@ async function init(){
  const themeSwitch=document.createElement('button');themeSwitch.className='theme-switch';themeSwitch.type='button';stage.append(themeSwitch);
  function updateThemeSwitch(){themeSwitch.textContent=currentMood==='night'?say('☀ Day mode','☀ 日间模式'):say('☾ Night mode','☾ 夜间模式');themeSwitch.setAttribute('aria-label',currentMood==='night'?say('Switch to day mode','切换至日间模式'):say('Switch to night mode','切换至夜间模式'));}
  themeSwitch.addEventListener('click',async()=>{themeSwitch.disabled=true;await chooseMood(currentMood==='night'?'day':'night');themeSwitch.disabled=false;updateThemeSwitch();});new MutationObserver(updateThemeSwitch).observe(document.documentElement,{attributes:true,attributeFilter:['lang','data-theme']});updateThemeSwitch();
+ // Explicit replay is the only action which clears this session's intro marker.
+ const replay=document.createElement('button');replay.className='intro-replay';replay.type='button';
+ replay.textContent=say('Replay intro','重播开场');replay.disabled=reduced.matches;
+ const updateReplay=()=>{replay.disabled=reduced.matches;replay.textContent=say('Replay intro','重播开场');};
+ reduced.addEventListener('change',updateReplay);new MutationObserver(updateReplay).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+ replay.addEventListener('click',()=>{if(reduced.matches)return;try{sessionStorage.removeItem('weiyi-desk-intro-seen-v3');}catch{return;}window.scrollTo(0,0);location.reload();});
+ document.querySelector('.desk-caption').append(replay);
+ // Project the existing screen geometry after the final responsive camera render.
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{
+  const vertices=monitorScreen.geometry.attributes.position;
+  const points=[0,1,3,2].map(i=>monitorScreen.localToWorld(new THREE.Vector3().fromBufferAttribute(vertices,i)).project(camera)).map(p=>[(p.x*.5+.5)*stage.clientWidth,(-p.y*.5+.5)*stage.clientHeight]);
+  window.deskIntro?.start(points,{day:()=>chooseMood(introPreference,false,1000)});
+ }));
+
 
 
 }
