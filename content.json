@@ -1,0 +1,1575 @@
+{
+  "cvPdf": "/files/Weiyi-Wang-CV-770f4fd91eaf.pdf",
+  "projects": [
+    {
+      "slug": "bamor",
+      "name": "BAMOR",
+      "year": "2026",
+      "category": [
+        "Responsive Environment",
+        "响应式环境"
+      ],
+      "sections": [
+        {
+          "title": [
+            "Project brief",
+            "项目简介"
+          ],
+          "type": "text",
+          "text": [
+            "BAMOR explores the potential of applying bamboo and other naturally elastic materials to responsive soft robotic architecture. Unlike conventional temporary performance installations that primarily rely on industrial materials and static structures, the project utilizes the inherent flexibility of bamboo to construct a lightweight, deployable bamboo–textile structure that is easy to transport and assemble, and applies it to a small-scale performance and viewing space.\n\nThe system enhances the relationship between people and space through two modes of interaction: in everyday use, the installation recognizes users’ postures and positions in real time and adaptively adjusts its spatial form to accommodate different needs for rest and activity; in performance settings, the installation captures the tempo and beats of music in real time, driving the structural blades to produce rhythmic dynamic responses, allowing the space itself to participate in the performance and enhancing the immersive experience of performers and audiences.\n\nBAMOR thus combines natural materials, lightweight deployable structures, and real-time interaction, while reducing the environmental impact of temporary installations through the renewable and biodegradable material life cycle of bamboo, exploring a more sustainable dynamic architectural environment with sensing and responsive capabilities.",
+            "BAMOR 探索将竹材等天然弹性材料用于响应式软体机器人建筑的可能性。项目利用竹材自身的柔韧性，构建轻质、可展开、便于运输与组装的竹—织物结构，将其应用于小型表演与观看空间。\n\n系统通过两种交互模式加强人与空间的联系：日常使用时，装置实时识别使用者的姿态与位置，并调整空间形态，以适应休息和活动需求；表演时，装置实时捕捉音乐节奏与节拍，驱动结构叶片产生律动，让空间参与表演，增强表演者和观众的沉浸体验。\n\nBAMOR 将天然材料、轻质可展开结构和实时交互结合，并通过竹材可再生、可生物降解的材料生命周期，探索降低临时装置环境影响的可能性，构建具有感知与响应能力的动态建筑环境。"
+          ]
+        },
+        {
+          "title": [
+            "Drawings & outcomes",
+            "图纸与成果"
+          ],
+          "type": "group",
+          "blocks": [
+            {
+              "title": [
+                "Outcomes — film",
+                "成果记录 · 视频"
+              ],
+              "type": "video",
+              "src": "/videos/bamor-outcome-20261004.mp4",
+              "poster": "/images/bamor/cover.webp"
+            },
+            {
+              "title": [
+                "Outcomes",
+                "成果记录"
+              ],
+              "type": "gallery",
+              "images": [
+                {
+                  "src": "/images/bamor/outcome-1.webp",
+                  "alt": "BAMOR — Outcomes 1"
+                },
+                {
+                  "src": "/images/bamor/outcome-2.webp",
+                  "alt": "BAMOR — Outcomes 2"
+                },
+                {
+                  "src": "/images/bamor/outcome-5.webp",
+                  "alt": "BAMOR — Outcomes 5"
+                },
+                {
+                  "src": "/images/bamor/outcome-6.webp",
+                  "alt": "BAMOR — Outcomes 6"
+                },
+                {
+                  "src": "/images/bamor/media-c60e70eadb97.webp",
+                  "alt": "BAMOR — construction research"
+                },
+                {
+                  "src": "/images/bamor/media-371be7d99536.webp",
+                  "alt": "BAMOR — project presentation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": [
+            "Collaborators",
+            "合作成员"
+          ],
+          "type": "text",
+          "text": [
+            "Siyi Mao , Yuhe Shi , Zhengzhen Zhang, Jiahong Zheng",
+            "Siyi Mao , Yuhe Shi , Zhengzhen Zhang, Jiahong Zheng"
+          ]
+        }
+      ],
+      "cover": "/images/bamor/cover.webp",
+      "coverAlt": "BAMOR — project cover",
+      "heroMotion": {
+        "src": "/videos/bamor-hero.mp4",
+        "poster": "/images/bamor/cover.webp"
+      }
+    },
+    {
+      "slug": "digital-flora",
+      "name": "Digital Flora",
+      "year": "2026",
+      "category": [
+        "Behavioural Material",
+        "行为材料"
+      ],
+      "sections": [
+        {
+          "title": [
+            "Project brief",
+            "项目简介"
+          ],
+          "type": "text",
+          "text": [
+            "This project explores sensor-driven motor control using Arduino and ROS2. An ultrasonic distance sensor provides real-time input, which is used to control a Dynamixel motor and actuate a kinetic structure. A threshold-based control strategy with a buffer zone (hysteresis-like logic) is implemented to improve stability and avoid rapid switching.\nKey variables include distance (cm), threshold_close = 25 cm, threshold_open = 35 cm, threshold_stop = 60 cm, current_state (close / open / stop), and motor velocity commands. When the distance is less than 25 cm, the structure closes (Motor Velocity=+80); when between 35 cm and 60 cm, it opens(Motor Velocity=-80); and when above 60 cm, the motor stops(Motor Velocity=0). The buffer zone between 25 cm and 35 cm ensures smoother transitions.",
+            "本项目探索基于 Arduino 与 ROS2 的传感器驱动电机控制。超声波距离传感器提供实时输入，控制 Dynamixel 电机并驱动动态结构。系统采用带缓冲区的阈值控制策略，以提高稳定性、避免快速切换。\n\n关键参数包括距离、25 cm 的闭合阈值、35 cm 的打开阈值、60 cm 的停止阈值、当前状态及电机速度。当距离小于 25 cm 时，结构闭合（速度 +80）；距离为 35–60 cm 时打开（速度 −80）；距离超过 60 cm 时停止。25–35 cm 的缓冲区使状态过渡更加平稳。"
+          ]
+        },
+        {
+          "title": [
+            "Process & experiments",
+            "过程与实验"
+          ],
+          "type": "gallery",
+          "images": [
+            {
+              "src": "/images/digital-flora/process-1.webp",
+              "alt": "Digital Flora — Process & experiments 1"
+            },
+            {
+              "src": "/images/digital-flora/process-2.webp",
+              "alt": "Digital Flora — Process & experiments 2"
+            },
+            {
+              "src": "/images/digital-flora/process-3.webp",
+              "alt": "Digital Flora — Process & experiments 3"
+            }
+          ]
+        },
+        {
+          "title": [
+            "Outcomes — film",
+            "成果记录 · 视频"
+          ],
+          "type": "video",
+          "src": "/videos/digital-flora-outcome-1.mp4",
+          "poster": "/images/digital-flora/cover.webp"
+        }
+      ],
+      "cover": "/images/digital-flora/cover.webp",
+      "coverAlt": "Digital Flora — project cover"
+    },
+    {
+      "slug": "urban-mycelium",
+      "name": "Urban Mycelium",
+      "year": "2026",
+      "category": [
+        "AR Experiment",
+        "增强现实实验"
+      ],
+      "sections": [
+        {
+          "title": [
+            "Project brief",
+            "项目简介"
+          ],
+          "type": "text",
+          "text": [
+            "In a world where architecture breathes and infrastructure grows, Urban Mycelium envisions a city interwoven with living light. Each organism—part fungus, part technology—forms a network of bioluminescent structures that clean the air, guide the night, and nurture public life.\n\nFrom the floating Aerolume that purifies the atmosphere, to the grounding Glowstool that invites rest, these luminous hybrids reimagine urban ecology as a living, evolving organism.",
+            "Urban Mycelium 构想一座建筑能够呼吸、基础设施能够生长的城市：介于真菌与技术之间的生物发光结构形成网络，净化空气、引导夜间活动，并滋养公共生活。\n\n从漂浮并净化大气的 Aerolume，到扎根地面、邀请人们休息的 Glowstool，这些发光的混合体将城市生态重新想象为不断演化的生命体。"
+          ]
+        },
+        {
+          "title": [
+            "Drawings & outcomes",
+            "图纸与成果"
+          ],
+          "type": "group",
+          "blocks": [
+            {
+              "title": [
+                "Outcomes — film",
+                "成果记录 · 视频"
+              ],
+              "type": "video",
+              "src": "/videos/urban-mycelium-outcome-1.mp4",
+              "poster": "/images/urban-mycelium/cover-20261004-v2.webp"
+            },
+            {
+              "title": [
+                "Outcomes",
+                "成果记录"
+              ],
+              "type": "gallery",
+              "images": [
+                {
+                  "src": "/images/urban-mycelium/outcome-1.webp",
+                  "alt": "Urban Mycelium — Outcomes 1"
+                },
+                {
+                  "src": "/images/urban-mycelium/outcome-3.webp",
+                  "alt": "Urban Mycelium — Outcomes 3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": [
+            "Collaborators",
+            "合作成员"
+          ],
+          "type": "text",
+          "text": [
+            "Anyu Zhang",
+            "Anyu Zhang"
+          ]
+        }
+      ],
+      "cover": "/images/urban-mycelium/cover-20261004-v2.webp",
+      "coverAlt": "Urban Mycelium — project cover",
+      "subtitle": [
+        "AR Workshop",
+        "增强现实工作坊"
+      ]
+    },
+    {
+      "slug": "memory-museum",
+      "name": "Memory Museum",
+      "year": "2025",
+      "category": [
+        "Narrative Architecture",
+        "叙事建筑"
+      ],
+      "cover": "/images/memory-museum/cover-efe2eb13a4a4.webp",
+      "sections": [
+        {
+          "title": [
+            "Project brief",
+            "项目简介"
+          ],
+          "type": "text",
+          "text": [
+            "Memory Museum explores how human memory has evolved alongside cultural and technological development. Beginning with Matteo Ricci’s Memory Palace and Bernard Stiegler’s theory of primary, secondary, and tertiary memory, the project translates different modes of remembering into architectural experiences.\n\nThree interconnected programmes—a government meeting space, a religious space, and an archaeological research institute—correspond respectively to immediate memory, long-term personal memory, and technologically externalised memory. Through overlapping programmes, shifting thresholds, material transitions, light, and different forms of exhibition, these abstract processes of memory are transformed into a continuous spatial narrative.\n\nRather than treating memory as something contained solely within the mind, the museum traces its transformation from immediate perception and personal recollection to externalised technological storage. Designed as an expandable structure extending towards the Meiguan Ancient Road, the architecture itself grows and accumulates over time, echoing the evolving nature of human memory.",
+            "Memory Museum 探索人类记忆如何随文化与技术发展而演变。项目从利玛窦的记忆宫殿与贝尔纳·斯蒂格勒关于第一、第二和第三记忆的理论出发，将不同的记忆方式转化为建筑体验。政府议事空间、宗教空间和考古研究机构相互连接，分别对应即时记忆、个人长期记忆和技术外化记忆。通过功能叠合、阈限变化、材料、光线与展陈方式，建筑形成连续的空间叙事，并以朝梅关古道延伸的可扩展结构回应记忆不断积累与演变的过程。"
+          ]
+        },
+        {
+          "title": [
+            "Process",
+            "过程"
+          ],
+          "type": "gallery",
+          "images": [
+            {
+              "src": "/images/memory-museum/process-1.webp",
+              "alt": "Memory Museum — Process 1"
+            },
+            {
+              "src": "/images/memory-museum/process-2.webp",
+              "alt": "Memory Museum — Process 2"
+            },
+            {
+              "src": "/images/memory-museum/process-3.webp",
+              "alt": "Memory Museum — Process 3"
+            },
+            {
+              "src": "/images/memory-museum/process-4.webp",
+              "alt": "Memory Museum — Process 4"
+            },
+            {
+              "src": "/images/memory-museum/process-5.webp",
+              "alt": "Memory Museum — Process 5"
+            },
+            {
+              "src": "/images/memory-museum/process-6.webp",
+              "alt": "Memory Museum — Process 6"
+            },
+            {
+              "src": "/images/memory-museum/process-7.webp",
+              "alt": "Memory Museum — Process 7"
+            },
+            {
+              "src": "/images/memory-museum/process-8.webp",
+              "alt": "Memory Museum — Process 8"
+            },
+            {
+              "src": "/images/memory-museum/process-9.webp",
+              "alt": "Memory Museum — Process 9"
+            }
+          ]
+        },
+        {
+          "title": [
+            "Drawings",
+            "图纸"
+          ],
+          "type": "gallery",
+          "images": [
+            {
+              "src": "/images/memory-museum/drawing-1.webp",
+              "alt": "Memory Museum — Drawings 1"
+            },
+            {
+              "src": "/images/memory-museum/drawing-2.webp",
+              "alt": "Memory Museum — Drawings 2"
+            },
+            {
+              "src": "/images/memory-museum/drawing-3.webp",
+              "alt": "Memory Museum — Drawings 3"
+            },
+            {
+              "src": "/images/memory-museum/drawing-4.webp",
+              "alt": "Memory Museum — Drawings 4"
+            },
+            {
+              "src": "/images/memory-museum/drawing-5.webp",
+              "alt": "Memory Museum — Drawings 5"
+            },
+            {
+              "src": "/images/memory-museum/drawing-6.webp",
+              "alt": "Memory Museum — Drawings 6"
+            },
+            {
+              "src": "/images/memory-museum/drawing-7.webp",
+              "alt": "Memory Museum — Drawings 7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "adaptive-facade",
+      "name": "Adaptive Facade",
+      "year": "2024",
+      "category": [
+        "Adaptive Architecture",
+        "自适应建筑"
+      ],
+      "sections": [
+        {
+          "title": [
+            "Project brief",
+            "项目简介"
+          ],
+          "type": "text",
+          "text": [
+            "Interest in the use of kinetic envelopes in architecture has grown in recent years. On the one hand, digital design processes are available to bring kinetic concepts to life. On the other hand, there is a desire to have active building elements to regulate building performance and create a more comfortable built environment. The advent of digital design processes has made the concept of kinetic energy a reality.\n\nThis design explores the design and application of an adaptive facade in a specific context, the Suzhou region, which is located in a subtropical monsoon climate. Specifically, the design results are presented in terms of geometry, kinetic systems, energy conversion and adaptive shading effects. \n\nWhen analysing the different energy flows, solar radiation is of particular interest. The mediation of solar radiation has the potential to reduce heating and cooling requirements while distributing daylight according to the wishes of the occupants. In addition, the use of thin-film photovoltaic panels as kinetic energy elements enables facades to act as generators. In some cases, this technology can offset the energy consumption of the spaces behind the envelope, increasing the sustainability of the building while creating a more comfortable indoor environment.",
+            "本项目以亚热带季风气候下的苏州为背景，探索自适应建筑立面的设计与应用，涵盖几何构成、运动系统、能量转换与动态遮阳。通过调节太阳辐射，立面在降低采暖和制冷需求的同时，为使用者提供适宜的自然采光。薄膜光伏板作为可运动构件，使建筑表皮兼具发电能力，以提升建筑可持续性与室内舒适度。"
+          ]
+        },
+        {
+          "title": [
+            "Process & experiments",
+            "过程与实验"
+          ],
+          "type": "gallery",
+          "images": [
+            {
+              "src": "/images/adaptive-facade/process-1.webp",
+              "alt": "Adaptive Facade — Process & experiments 1"
+            }
+          ]
+        },
+        {
+          "title": [
+            "Outcomes",
+            "成果记录"
+          ],
+          "type": "gallery",
+          "images": [
+            {
+              "src": "/images/adaptive-facade/outcome-1.webp",
+              "alt": "Adaptive Facade — Outcomes 1"
+            },
+            {
+              "src": "/images/adaptive-facade/outcome-2.webp",
+              "alt": "Adaptive Facade — Outcomes 2"
+            },
+            {
+              "src": "/images/adaptive-facade/outcome-3.webp",
+              "alt": "Adaptive Facade — Outcomes 3"
+            },
+            {
+              "src": "/images/adaptive-facade/outcome-4.webp",
+              "alt": "Adaptive Facade — Outcomes 4"
+            }
+          ]
+        }
+      ],
+      "cover": "/images/adaptive-facade/cover-20261006.webp",
+      "coverAlt": "Adaptive Facade — project cover"
+    },
+    {
+      "slug": "moon-village",
+      "name": "Moon Metabolism",
+      "year": "2024",
+      "category": [
+        "Lunar Settlement",
+        "月球聚落"
+      ],
+      "sections": [
+        {
+          "title": [
+            "Project brief",
+            "项目简介"
+          ],
+          "type": "text",
+          "text": [
+            "As humanity continues to advance in space exploration, the Moon has become a key target for establishing long-term human settlements. The vision of creating a sustainable human presence on the Moon has gained global attention, driven by organizations like NASA and the European Space Agency. With significant progress in space technology, constructing a permanent lunar base is now a tangible goal. This presents new challenges in ensuring human survival, including addressing the extreme environmental conditions and creating self-sustaining habitats.\n\nThe Moon's environment differs greatly from Earth's, with extreme temperature fluctuations, radiation exposure, and no atmospheric protection. However, areas such as the Moon's south pole, particularly the permanently sunlit regions, present ideal locations for establishing a lunar settlement. Additionally, lava tubes found on the Moon provide natural shelter, offering protection from radiation and temperature extremes, making them a promising foundation for constructing a habitat.\n\nThis project proposes a sustainable lunar settlement, the \"Moon Village,\" designed to support long-term human habitation. The settlement will be built within the Moon's lava tubes, taking advantage of their natural insulation. Modular and inflatable structures will be used to create flexible living spaces, minimizing transportation and construction costs. Solar energy and self-sustaining greenhouse systems will provide the necessary resources for energy and food.\n\nThe design also incorporates robotic construction and 3D printing technologies, which will be used for expanding the settlement as human presence on the Moon grows. This proposal offers a feasible approach to lunar habitation, focusing on sustainability, flexibility, and long-term expansion.",
+            "本项目探索支持长期居住的可持续月球聚落。月球极端温差、辐射与缺乏大气保护的环境，对居住系统提出挑战；南极区域的日照条件和熔岩管的天然防护能力，为聚落选址提供了可能。\n\n方案将主要居住空间置于熔岩管内，利用天然隔热与防辐射条件。模块化和可充气结构提供灵活的居住空间，并降低运输与建造成本。太阳能与温室系统支持能源和食物供给。\n\n机器人建造和 3D 打印支持聚落随人口增长而扩展，形成强调可持续性、灵活性与长期发展的月球居住设想。"
+          ]
+        },
+        {
+          "title": [
+            "Drawings & outcomes",
+            "图纸与成果"
+          ],
+          "type": "group",
+          "blocks": [
+            {
+              "title": [
+                "Outcomes — film",
+                "成果记录 · 视频"
+              ],
+              "type": "video",
+              "src": "/videos/moon-village-outcome-1.mp4",
+              "poster": "/images/moon-village/cover.webp"
+            },
+            {
+              "title": [
+                "Outcomes",
+                "成果记录"
+              ],
+              "type": "gallery",
+              "images": [
+                {
+                  "src": "/images/moon-village/outcome-2.webp",
+                  "alt": "Moon Metabolism — Outcomes 2"
+                },
+                {
+                  "src": "/images/moon-village/outcome-3-20261007.webp",
+                  "alt": "Moon Metabolism — Outcomes 3"
+                },
+                {
+                  "src": "/images/moon-village/outcome-4.webp",
+                  "alt": "Moon Metabolism — Outcomes 4"
+                },
+                {
+                  "src": "/images/moon-village/outcome-5.webp",
+                  "alt": "Moon Metabolism — Outcomes 5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": [
+            "Collaborators",
+            "合作成员"
+          ],
+          "type": "text",
+          "text": [
+            "Ke Yan, Xinle Tian",
+            "Ke Yan, Xinle Tian"
+          ]
+        }
+      ],
+      "cover": "/images/moon-village/cover-0a85f86fdc80.webp",
+      "coverAlt": "Moon Metabolism — project cover",
+      "subtitle": [
+        "Possibility of Lava Tubes Below the Lunar Surface: \nModular Lunar Settlement Design for Long-term Habitation",
+        "月球地下熔岩管的可能性：面向长期居住的模块化月球聚落"
+      ]
+    },
+    {
+      "slug": "generic-traditional",
+      "name": "Generic & Traditional",
+      "year": "2024",
+      "category": [
+        "Neighbourhood Centre",
+        "邻里中心"
+      ],
+      "sections": [
+        {
+          "title": [
+            "Project brief",
+            "项目简介"
+          ],
+          "type": "text",
+          "text": [
+            "A neighborhood center provides multifunctional services for the community, promoting interaction and meeting daily needs. This concept is widely applied in Singapore and Suzhou Industrial Park, enhancing accessibility and social connections through compact design. As global urbanization accelerates, cities are becoming more standardized, often at the cost of local culture and history. The Shantang area in Suzhou, a key cultural landmark, serves both as a residential space and a tourist destination, fostering a diverse community of locals and visitors.\n\nGeneric & Traditional explores the tension between modern urban development and cultural identity preservation through three core principles: efficiency, inclusivity, and regionalism. Inspired by Rem Koolhaas's “Generic City” concept, which prioritizes efficiency and globalization, neighborhood centers are functional hubs but often lack a unique identity. In Suzhou, the challenge is integrating modern practicality with the cultural and historical significance of places like Shantang Street and the ancient city walls.\nThrough three core principles—efficiency, inclusivity, and regionalism—Generic & Traditional explores this tension and bridges the divide between Suzhou’s past and present, creating a space that is both functional and meaningful.\n\nThe design integrates modern needs with local heritage by combining flexible, modular spaces with historical and cultural elements of the site. The use of local materials, like recycled bricks and wood, and the layout that responds to the natural and historical context of the area, reflects a commitment to regionalism and sustainability. This approach fosters a dynamic environment where modernity and tradition coexist, providing a space that serves the community’s diverse needs while respecting its heritage.",
+            "邻里中心通过多功能服务促进社区交往、满足日常需求。全球城市化提升了效率，也可能削弱地方文化与历史。苏州山塘地区兼具居住与旅游功能，为探索现代城市发展与文化身份之间的张力提供了背景。\n\nGeneric & Traditional 围绕效率、包容性和地域性展开，借鉴雷姆·库哈斯“通用城市”的讨论，思考如何把现代功能需求与山塘街、古城墙的历史意义结合。\n\n设计以灵活模块空间回应日常使用，并通过回收砖、木材及顺应场地历史环境的布局，将地方材料和文化记忆融入当代邻里中心，让现代性与传统并存。"
+          ]
+        },
+        {
+          "title": [
+            "Process & experiments",
+            "过程与实验"
+          ],
+          "type": "gallery",
+          "images": [
+            {
+              "src": "/images/generic-traditional/process-1.webp",
+              "alt": "Generic & Traditional — Process & experiments 1"
+            }
+          ]
+        },
+        {
+          "title": [
+            "Outcomes",
+            "成果记录"
+          ],
+          "type": "gallery",
+          "images": [
+            {
+              "src": "/images/generic-traditional/outcome-1-20261007.webp",
+              "alt": "Generic & Traditional — Outcomes 1"
+            },
+            {
+              "src": "/images/generic-traditional/outcome-2.webp",
+              "alt": "Generic & Traditional — Outcomes 2"
+            },
+            {
+              "src": "/images/generic-traditional/outcome-3.webp",
+              "alt": "Generic & Traditional — Outcomes 3"
+            },
+            {
+              "src": "/images/generic-traditional/outcome-4.webp",
+              "alt": "Generic & Traditional — Outcomes 4"
+            }
+          ]
+        }
+      ],
+      "cover": "/images/generic-traditional/cover.webp",
+      "coverAlt": "Generic & Traditional — project cover",
+      "subtitle": [
+        "Neighborhood Center Design: Exploring the tension between modern urban development and the preservation of cultural identity",
+        "邻里中心设计：现代城市发展与文化身份保护之间的张力"
+      ]
+    },
+    {
+      "slug": "parametric-robotic-construction",
+      "name": "Parametric Robotic Construction",
+      "year": "2024",
+      "category": [
+        "Robotic Construction",
+        "机器人建造"
+      ],
+      "sections": [
+        {
+          "title": [
+            "Project brief",
+            "项目简介"
+          ],
+          "type": "text",
+          "text": [
+            "This collaborative project combines modern robotic technology with parametric design, using Grasshopper-generated parametric curves to precisely construct a brick wall with a robotic arm. The design not only demonstrates the application of digital tools in architecture but also explores how to achieve precise construction and structural stability in complex curved forms. The efficiency and flexibility of the robotic arm offer unprecedented possibilities for architectural design, driving innovation in construction methods.",
+            "这个合作项目将机器人技术与参数化设计结合，利用 Grasshopper 生成参数化曲线，通过机械臂精确建造砖墙。项目探索数字工具在建筑中的应用，以及复杂曲面形态中的建造精度与结构稳定性，研究机械臂的效率和灵活性为建筑建造带来的可能。"
+          ]
+        },
+        {
+          "title": [
+            "Process & experiments — film",
+            "过程与实验 · 视频"
+          ],
+          "type": "video",
+          "src": "/videos/parametric-robotic-construction-process-1.mp4",
+          "poster": "/images/parametric-robotic-construction/cover-20261006.webp"
+        },
+        {
+          "title": [
+            "Process & experiments",
+            "过程与实验"
+          ],
+          "type": "gallery",
+          "images": [
+            {
+              "src": "/images/parametric-robotic-construction/process-2.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 2"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-3.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 3"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-4.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 4"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-5.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 5"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-6.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 6"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-7.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 7"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-8.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 8"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-9.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 9"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-10.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 10"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-11.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 11"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-12.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 12"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-13.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 13"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-14.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 14"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-15.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 15"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-16.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 16"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-17.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 17"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-18.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 18"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-19.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 19"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-20.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 20"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-21.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 21"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/process-22.webp",
+              "alt": "Parametric Robotic Construction — Process & experiments 22"
+            },
+            {
+              "src": "/images/parametric-robotic-construction/media-21a4b9664593.webp",
+              "alt": "Robotic construction — process photograph"
+            }
+          ]
+        },
+        {
+          "title": [
+            "Outcomes",
+            "成果记录"
+          ],
+          "type": "gallery",
+          "images": [
+            {
+              "src": "/images/parametric-robotic-construction/outcome-1.webp",
+              "alt": "Parametric Robotic Construction — Outcomes 1"
+            }
+          ]
+        },
+        {
+          "title": [
+            "Collaborators",
+            "合作成员"
+          ],
+          "type": "text",
+          "text": [
+            "Wanqi Liu, Feiyun Zhuang, Anping Wang, Yang Yu, Zhenyi.Zeng, Zijian.Zhang, Yixuan Yao, Wenwen Wang, Chenhao Li",
+            "Wanqi Liu, Feiyun Zhuang, Anping Wang, Yang Yu, Zhenyi.Zeng, Zijian.Zhang, Yixuan Yao, Wenwen Wang, Chenhao Li"
+          ]
+        }
+      ],
+      "cover": "/images/parametric-robotic-construction/cover-20261006.webp",
+      "coverAlt": "Parametric Robotic Construction — project cover",
+      "subtitle": [
+        "Parametric Brick Wall Construction with Robotic Arm",
+        "机械臂参数化砖墙建造"
+      ]
+    },
+    {
+      "slug": "rural-plug-in",
+      "name": "Farmland Plugin",
+      "year": "2023",
+      "category": [
+        "Rural Architecture",
+        "乡村建筑"
+      ],
+      "sections": [
+        {
+          "title": [
+            "Project brief",
+            "项目简介"
+          ],
+          "type": "text",
+          "text": [
+            "This project aims to support rural revitalization in China by addressing challenges like economic stagnation, aging populations, and rural-urban migration. It explores how architecture can create sustainable infrastructure that strengthens local industries, fosters community connections, and attracts tourism.\n\nNanwang Village, near Taihu Lake in Suzhou, lies at the crossroads between the village core and surrounding farmland. Known for its scenic landscapes and fruit industry, the site features production chains, packaging facilities, and roadside markets. Temporary constructions showcase the villagers' ingenuity, while spatial activities, such as informal gatherings and fruit harvesting, highlight the dynamic interplay of rural life and built form. These phenomena inspired the concept of \"interlace,\" symbolizing the interaction between people, nature, and architecture.\n\nPublic functions like markets and event spaces align with main routes, while guesthouses near farmland offer privacy and nature immersion. Diverse unit typologies accommodate various needs, incorporating terraces, green roofs, and flexible installations inspired by temporary structures. Sustainable strategies, including steel frames, passive cooling, and green infrastructure, enhance energy efficiency and reduce impact.\n\nThe project envisions a vibrant hub where visitors experience authentic rural life, villagers gain economic opportunities, and architecture fosters sustainable development and cultural integration.",
+            "本项目关注中国乡村振兴中的经济停滞、人口老龄化与城乡迁移问题，探索建筑如何通过可持续基础设施支持本地产业、社区交往与旅游发展。\n\n基地位于苏州太湖附近的南旺村，连接村庄中心与周边农田。当地果业生产、包装设施、路边集市与村民自建的临时设施，共同呈现乡村生活与建成环境的联系，启发了人与自然、建筑相互交织的“interlace”概念。\n\n集市与活动空间沿主要流线布局，靠近农田的客房提供私密性和自然体验。不同单元结合露台、绿化屋顶及灵活设施，适应多种需求；钢框架、被动降温和绿色基础设施提升环境表现。\n\n项目希望成为连接乡村体验、经济机会与文化交流的公共节点。"
+          ]
+        },
+        {
+          "title": [
+            "Outcomes",
+            "成果记录"
+          ],
+          "type": "gallery",
+          "images": [
+            {
+              "src": "/images/rural-plug-in/outcome-1.webp",
+              "alt": "Farmland Plugin — Outcomes 1"
+            },
+            {
+              "src": "/images/rural-plug-in/outcome-2.webp",
+              "alt": "Farmland Plugin — Outcomes 2"
+            },
+            {
+              "src": "/images/rural-plug-in/outcome-3.webp",
+              "alt": "Farmland Plugin — Outcomes 3"
+            },
+            {
+              "src": "/images/rural-plug-in/outcome-4.webp",
+              "alt": "Farmland Plugin — Outcomes 4"
+            },
+            {
+              "src": "/images/rural-plug-in/outcome-5.webp",
+              "alt": "Farmland Plugin — Outcomes 5"
+            }
+          ]
+        }
+      ],
+      "cover": "/images/rural-plug-in/cover-12e467e06eb5.webp",
+      "coverAlt": "Farmland Plugin — project cover"
+    },
+    {
+      "slug": "underground-theater",
+      "name": "Underground Theater",
+      "year": "2023",
+      "category": [
+        "Public Cultural Space",
+        "公共文化空间"
+      ],
+      "sections": [
+        {
+          "title": [
+            "Project brief",
+            "项目简介"
+          ],
+          "type": "text",
+          "text": [
+            "Plato's Cave is the first cinema of mankind; the design concept of this project begins with the allegory of Plato's Cave, where one sees both the consciously presented world and the shadow of the real world. Virtual light and shadow are projected in the dark, soundproof cinema space underground, while real sunlight slants down in the open, continuous public space, accompanied by cultural and social spaces。\n\nThe operation of modern cinema is closely tied to capital and consumption, often serving a single purpose. Research shows the venue is near a residential area in the Hongkou district of Shanghai, with a rich urban history, and is close to the first cinema in the area. Cinemas take up less space than theatres and are more accessible to the public, making them more suitable for this venue's size and location.\n\nBased on this, the design proposes the idea of a 'beacon of culture', focusing on activities before and after the film to transform the cinema into a multifunctional space. This allows for a cultural experience beyond the usual single-function model. Activities like exhibitions, readings, and coffee can be added to the darkened space, before, during, or after the film, creating a more dynamic environment. The experience culminates in a transition from virtual to real light and shadow, encouraging exploration and understanding of the real world through communication, rather than just eating and shopping like in a mall.",
+            "项目以柏拉图的洞穴寓言为起点，探讨被呈现的世界与真实世界的影像。地下隔音影院投射虚拟光影，地上的开放公共空间则引入真实日光，并连接文化与社交活动。\n\n基地位于上海虹口居住区附近，具有丰富的城市历史，靠近当地早期电影院。相较剧场，电影院对空间的需求更紧凑，也更贴近公众生活。\n\n设计提出“文化灯塔”的概念，通过观影前后的活动，将单一影院转化为多功能公共场所。展览、阅读和咖啡等功能延展观影体验，从虚拟光影走向真实光影，鼓励人们通过交流探索现实世界。"
+          ]
+        },
+        {
+          "title": [
+            "Outcomes",
+            "成果记录"
+          ],
+          "type": "gallery",
+          "images": [
+            {
+              "src": "/images/underground-theater/outcome-1.webp",
+              "alt": "Underground Theater — Outcomes 1"
+            },
+            {
+              "src": "/images/underground-theater/outcome-2.webp",
+              "alt": "Underground Theater — Outcomes 2"
+            },
+            {
+              "src": "/images/underground-theater/outcome-3.webp",
+              "alt": "Underground Theater — Outcomes 3"
+            },
+            {
+              "src": "/images/underground-theater/outcome-4.webp",
+              "alt": "Underground Theater — Outcomes 4"
+            }
+          ]
+        }
+      ],
+      "cover": "/images/underground-theater/cover-1c19395a8105.webp",
+      "coverAlt": "Underground Theater — project cover",
+      "subtitle": [
+        "Plato's Cave and the beacon of culture: \nThe concept of anti-commercial residential cinema and public space",
+        "柏拉图的洞穴与文化灯塔：非商业化社区影院与公共空间"
+      ]
+    }
+  ],
+  "cv": [
+    {
+      "title": [
+        "Education",
+        "教育经历"
+      ],
+      "entries": [
+        {
+          "date": "Sep 2025 – Sep 2026",
+          "title": [
+            "University College London",
+            "伦敦大学学院"
+          ],
+          "description": [
+            "MArch Architectural Design (RC2 – Soft Robotic Architecture)",
+            "建筑设计硕士（RC2 — 软体机器人建筑）。"
+          ]
+        },
+        {
+          "date": "Sep 2021 – Jun 2025",
+          "title": [
+            "Xi'an Jiaotong-Liverpool University & University of Liverpool",
+            "西交利物浦大学与利物浦大学"
+          ],
+          "description": [
+            "BEng Architecture (Dual Degree)",
+            "建筑学工程学士（双学位）"
+          ],
+          "bullets": [
+            [
+              "Upper Second Class Honours",
+              "二等一荣誉学位"
+            ],
+            [
+              "University Academic Excellence Award (Top 5%), Academic Years 2022–23 and 2023–24",
+              "大学学业优秀奖（前 5%），2022–23 和 2023–24 学年"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": [
+        "Research Interests",
+        "研究兴趣"
+      ],
+      "entries": [
+        {
+          "bullets": [
+            [
+              "Posthuman Architecture",
+              "后人类建筑"
+            ],
+            [
+              "Interactive and Responsive Architecture",
+              "交互与响应式建筑"
+            ],
+            [
+              "Spatial Memory",
+              "空间记忆"
+            ],
+            [
+              "Emerging Architectural Technologies",
+              "新兴建筑技术"
+            ],
+            [
+              "Embodied Spatial Experience",
+              "具身空间体验"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": [
+        "Publications & Conferences",
+        "学术发表与会议"
+      ],
+      "entries": [
+        {
+          "description": [
+            "Wang, W., et al. (2024). “Modular Lunar Village Concept Design for Long-Term Habitation Located in a Lava Tube.” Proceedings of the 75th International Astronautical Congress (IAC 2024). DOI: 10.52202/078382-0056.",
+            "Wang, W. 等（2024）。“熔岩管内长期居住模块化月球村概念设计”。第 75 届国际宇航大会论文集（IAC 2024）。DOI: 10.52202/078382-0056."
+          ],
+          "url": "https://doi.org/10.52202/078382-0056"
+        }
+      ]
+    },
+    {
+      "title": [
+        "Research Experience",
+        "研究经历"
+      ],
+      "entries": [
+        {
+          "date": "Nov 2025 – Sep 2026",
+          "title": [
+            "BAMOR — Bamboo Actuated Morphology for Operative Response",
+            "BAMOR — 面向操作响应的竹材驱动形态系统"
+          ],
+          "organization": [
+            "UCL Bartlett School of Architecture, RC2 – Soft Robotic Architecture",
+            "伦敦大学学院巴特莱特建筑学院，RC2 — 软体机器人建筑"
+          ],
+          "bullets": [
+            [
+              "Developed a human-scale, deployable bamboo–textile structure integrating natural material behaviour, computational design and robotic actuation.",
+              "开发人体尺度、可展开的竹—织物结构，整合天然材料行为、计算设计和机器人驱动。"
+            ],
+            [
+              "Built a real-time interaction workflow using Python, OpenCV, MediaPipe, aubio and ROS, translating body posture and musical rhythm into adaptive structural movement.",
+              "使用 Python、OpenCV、MediaPipe、aubio 和 ROS 构建实时交互流程，将身体姿态和音乐节奏转化为自适应结构运动。"
+            ],
+            [
+              "Explored co-embodiment through human–machine interaction, examining how responsive systems can participate in spatial experience and performance.",
+              "通过人机交互探索共同具身，研究响应式系统如何参与空间体验和表演。"
+            ]
+          ]
+        },
+        {
+          "date": "Jun 2024 – Oct 2024",
+          "title": [
+            "Modular Moon Village Concept Design for Long-term Habitation in Lava Tube",
+            "熔岩管内长期居住模块化月球村概念设计"
+          ],
+          "organization": [
+            "Xi'an Jiaotong-Liverpool University – Undergraduate Research Fellowship",
+            "西交利物浦大学 — 本科生研究项目"
+          ],
+          "bullets": [
+            [
+              "Conducted a systematic literature review on architectural and energy strategies for extreme extraterrestrial environments.",
+              "系统梳理极端地外环境中的建筑与能源策略相关文献。"
+            ],
+            [
+              "Developed a design-research framework translating environmental constraints into spatial systems.",
+              "开发设计研究框架，将环境约束转化为空间系统。"
+            ]
+          ],
+          "outcomes": [
+            [
+              "Published paper in the 75th International Astronautical Congress (IAC 2024)",
+              "在第 75 届国际宇航大会（IAC 2024）发表论文"
+            ],
+            [
+              "Project presented at the International Conference on Space Habitation and Exploitation 2024",
+              "项目于 2024 年空间居住与开发国际会议展示"
+            ],
+            [
+              "Second Prize, Australian Space Architecture Challenge 2025",
+              "2025 年澳大利亚太空建筑挑战赛二等奖"
+            ]
+          ]
+        },
+        {
+          "date": "Jun 2023 – Sep 2023",
+          "title": [
+            "Education-led Urban Regeneration",
+            "教育引领的城市更新"
+          ],
+          "organization": [
+            "Xi'an Jiaotong-Liverpool University – Undergraduate Research Fellowship",
+            "西交利物浦大学 — 本科生研究项目"
+          ],
+          "bullets": [
+            [
+              "Reviewed and categorised literature on spatial boundaries between educational institutions and urban contexts.",
+              "梳理并分类教育机构与城市环境之间空间边界的相关文献。"
+            ],
+            [
+              "Conducted fieldwork including interviews and observational recording; analysed qualitative data and developed visual representations.",
+              "开展包括访谈和观察记录在内的田野调查；分析定性数据并制作视觉表达。"
+            ],
+            [
+              "Proposed spatial strategies informed by empirical findings.",
+              "基于实证发现提出空间策略。"
+            ]
+          ],
+          "outcomes": [
+            [
+              "The results of the research and design were further developed and won the Tiantan Academy Award",
+              "研究与设计成果进一步深化，并获得天坛学院奖"
+            ]
+          ]
+        },
+        {
+          "date": "Jun 2025 – Aug 2025",
+          "title": [
+            "3D Printing Systems and Digital Medical Technologies",
+            "3D 打印系统与数字医疗技术"
+          ],
+          "organization": [
+            "Shanghai Jiao Tong University – Summer Research Project",
+            "上海交通大学 — 暑期研究项目"
+          ],
+          "bullets": [
+            [
+              "Reviewed additive manufacturing and soft robotic systems, focusing on material behaviour and adaptive fabrication.",
+              "梳理增材制造与软体机器人系统，关注材料行为和适应性制造。"
+            ],
+            [
+              "Contributed to the conceptual development of 3D-printing systems for adaptive fabrication.",
+              "参与用于适应性制造的 3D 打印系统的概念开发。"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": [
+        "Skills",
+        "技能"
+      ],
+      "entries": [
+        {
+          "bullets": [
+            [
+              "Design & Visualisation: Rhino, Grasshopper, Blender, Adobe Creative Suite",
+              "设计与可视化：Rhino、Grasshopper、Blender、Adobe Creative Suite"
+            ],
+            [
+              "Computational & Interactive Prototyping: Python, Arduino, p5.js, OpenCV, MediaPipe, ROS/ROS2, AI-assisted software prototyping",
+              "计算与交互原型：Python、Arduino、p5.js、OpenCV、MediaPipe、ROS/ROS2、AI 辅助软件原型设计"
+            ],
+            [
+              "Research Methods: Design Research, Literature Review, Theoretical Inquiry, Interviews, Fieldwork, Qualitative Analysis, Data Visualisation",
+              "研究方法：设计研究、文献综述、理论探究、访谈、田野调查、定性分析、数据可视化"
+            ],
+            [
+              "Languages: English (IELTS 7.0); Mandarin Chinese (Native)",
+              "语言：英语（雅思 7.0）；普通话（母语）"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "site": {
+    "intro": [
+      "Selected projects, writing and other work.",
+      "项目、写作与其他创作。"
+    ],
+    "about": [
+      "Weiyi Wang has a background in architecture, with interests spanning architectural design, emerging architectural technologies, and architectural theory. She is particularly interested in how technology participates in the design of space, and how its integration into architecture may reshape the ways people experience and remember space.\n\nShe received her undergraduate education in Architecture at Xi’an Jiaotong-Liverpool University and later pursued an MArch in Architectural Design at The Bartlett, UCL. Across design and research, she brings together spatial design, technological experimentation, and theoretical inquiry, exploring topics ranging from culture and memory and future habitats to computational design, responsive environments, and human–machine interaction.",
+      "王惟毅拥有建筑学背景。她的兴趣横跨建筑设计、新兴建筑技术与建筑理论，尤其关注技术如何参与空间设计，以及技术介入如何改变人们体验和记忆空间的方式。\n\n她本科毕业于西交利物浦大学建筑学专业，随后于伦敦大学学院巴特莱特建筑学院攻读建筑设计硕士。在设计与研究中，她结合空间设计、技术实验与理论思考，探索从文化与记忆、未来人居到计算设计、响应式环境与人机交互等不同议题。"
+    ],
+    "photo": "/images/about-portrait-20261006.webp",
+    "contact": {
+      "email": "wweiyiwang@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/weiyi-wang-43b83a334",
+      "xiaohongshu": "https://xhslink.cn/o/O74ytjm2Gc",
+      "secondaryEmail": "weiyiiiiiiwang@gmail.com",
+      "github": "https://github.com/WWeiyiWang"
+    },
+    "photos": [
+      "/images/about-studio.webp",
+      "/images/about-portrait-20261006.webp"
+    ]
+  },
+  "writing": [
+    {
+      "slug": "spatial-memory",
+      "title": [
+        "The Redistribution of Spatial Memory",
+        "空间记忆的重新分配"
+      ],
+      "date": "2026",
+      "description": [
+        "Co-Embodied Human–Technology Environments through Bernard Stiegler’s “Tertiary Retention”.",
+        "通过贝尔纳·斯蒂格勒的“第三持存”探讨人—技术共同具身环境。"
+      ],
+      "cover": "/images/writing/spatial-memory.webp",
+      "url": "/files/spatial-memory.pdf",
+      "images": []
+    },
+    {
+      "slug": "memory-patterns",
+      "title": [
+        "Reflecting on Memory Patterns in the Post-Human Era: AI, Digital Space, and the Reconfiguration of Embodied Memory",
+        "后人类时代的记忆模式：人工智能、数字空间与具身记忆的重构"
+      ],
+      "date": "2025",
+      "cover": "/images/writing/memory-patterns.webp",
+      "url": "/files/memory-patterns-20261007.pdf",
+      "video": "/videos/memory-patterns.mp4",
+      "images": [
+        "/images/writing/memory-patterns-map-20261007.webp"
+      ]
+    },
+    {
+      "slug": "lunar-settlement",
+      "title": [
+        "Modular Lunar Village Concept Design for Long-Term Habitation Located in a Lava Tube",
+        "熔岩管内长期居住模块化月球聚落概念设计"
+      ],
+      "date": "2024",
+      "description": [
+        "Wang, W., et al. (2024). Proceedings of the 75th International Astronautical Congress (IAC 2024).",
+        "Wang, W. 等，第75届国际宇航大会（IAC 2024）。"
+      ],
+      "cover": "/images/writing/cover-c6c6a6d7501c.webp",
+      "url": "/files/lunar-settlement.pdf",
+      "images": [
+        "/images/writing/lunar-settlement-1.webp",
+        "/images/writing/lunar-settlement-2.webp"
+      ],
+      "doi": "https://doi.org/10.52202/078382-0056",
+      "video": "/videos/moon-village-outcome-1.mp4"
+    }
+  ],
+  "desk": {
+    "windowImage": null,
+    "windowMood": "day",
+    "windowImages": {
+      "day": "/images/window-london-day.png",
+      "dusk": "/images/window-london-day.png",
+      "night": "/images/window-london-night.png"
+    }
+  },
+  "models": [
+    {
+      "slug": "memory-museum",
+      "name": "Memory Museum",
+      "year": "2025",
+      "project": "memory-museum",
+      "cover": "/images/models/memory-museum-slide-0.webp",
+      "images": [
+        {
+          "src": "/images/models/memory-museum-slide-0.webp",
+          "alt": "Memory Museum — physical model 1"
+        },
+        {
+          "src": "/images/models/memory-museum-slide-1.webp",
+          "alt": "Memory Museum — physical model 2"
+        },
+        {
+          "src": "/images/models/memory-museum-slide-2.webp",
+          "alt": "Memory Museum — physical model 3"
+        },
+        {
+          "src": "/images/models/memory-museum-slide-3.webp",
+          "alt": "Memory Museum — physical model 4"
+        },
+        {
+          "src": "/images/models/memory-museum-slide-4.webp",
+          "alt": "Memory Museum — physical model 5"
+        }
+      ]
+    },
+    {
+      "slug": "adaptive-facade",
+      "name": "Adaptive Facade",
+      "year": "2024",
+      "project": "adaptive-facade",
+      "cover": "/images/models/adaptive-facade-slide-0.webp",
+      "images": [
+        {
+          "src": "/images/models/adaptive-facade-slide-0.webp",
+          "alt": "Adaptive Facade — physical model 1"
+        },
+        {
+          "src": "/images/models/adaptive-facade-slide-1.webp",
+          "alt": "Adaptive Facade — physical model 2"
+        },
+        {
+          "src": "/images/models/adaptive-facade-slide-2.webp",
+          "alt": "Adaptive Facade — physical model 3"
+        },
+        {
+          "src": "/images/models/adaptive-facade-slide-3.webp",
+          "alt": "Adaptive Facade — physical model 4"
+        }
+      ]
+    },
+    {
+      "slug": "generic-traditional",
+      "name": "Generic & Traditional",
+      "year": "2024",
+      "project": "generic-traditional",
+      "cover": "/images/models/generic-traditional-slide-0.webp",
+      "images": [
+        {
+          "src": "/images/models/generic-traditional-slide-0.webp",
+          "alt": "Generic & Traditional — physical model 1"
+        },
+        {
+          "src": "/images/models/generic-traditional-slide-1.webp",
+          "alt": "Generic & Traditional — physical model 2"
+        },
+        {
+          "src": "/images/models/generic-traditional-slide-2.webp",
+          "alt": "Generic & Traditional — physical model 3"
+        },
+        {
+          "src": "/images/models/generic-traditional-slide-3.webp",
+          "alt": "Generic & Traditional — physical model 4"
+        },
+        {
+          "src": "/images/models/generic-traditional-slide-4.webp",
+          "alt": "Generic & Traditional — physical model 5"
+        },
+        {
+          "src": "/images/models/generic-traditional-slide-5.webp",
+          "alt": "Generic & Traditional — physical model 6"
+        }
+      ]
+    },
+    {
+      "slug": "underground-theater",
+      "name": "Underground Theater",
+      "year": "2024",
+      "project": "underground-theater",
+      "cover": "/images/models/underground-theater-slide-0.webp",
+      "images": [
+        {
+          "src": "/images/models/underground-theater-slide-0.webp",
+          "alt": "Underground Theater — physical model 1"
+        }
+      ]
+    },
+    {
+      "slug": "farmland-plugin",
+      "name": "Farmland Plugin",
+      "year": "2023",
+      "project": "rural-plug-in",
+      "cover": "/images/models/farmland-plugin-slide-0.webp",
+      "images": [
+        {
+          "src": "/images/models/farmland-plugin-slide-0.webp",
+          "alt": "Farmland Plugin — physical model 1"
+        },
+        {
+          "src": "/images/models/farmland-plugin-slide-1.webp",
+          "alt": "Farmland Plugin — physical model 2"
+        },
+        {
+          "src": "/images/models/farmland-plugin-slide-2.webp",
+          "alt": "Farmland Plugin — physical model 3"
+        },
+        {
+          "src": "/images/models/farmland-plugin-slide-3.webp",
+          "alt": "Farmland Plugin — physical model 4"
+        }
+      ]
+    },
+    {
+      "slug": "pavilion-of-reflection",
+      "name": "Pavilion of Reflection",
+      "year": "2022",
+      "project": null,
+      "cover": "/images/models/pavilion-of-reflection-slide-0.webp",
+      "images": [
+        {
+          "src": "/images/models/pavilion-of-reflection-slide-0.webp",
+          "alt": "Pavilion of Reflection — physical model 1"
+        },
+        {
+          "src": "/images/models/pavilion-of-reflection-slide-1.webp",
+          "alt": "Pavilion of Reflection — physical model 2"
+        },
+        {
+          "src": "/images/models/pavilion-of-reflection-slide-2.webp",
+          "alt": "Pavilion of Reflection — physical model 3"
+        },
+        {
+          "src": "/images/models/pavilion-of-reflection-slide-3.webp",
+          "alt": "Pavilion of Reflection — physical model 4"
+        },
+        {
+          "src": "/images/models/pavilion-of-reflection-slide-4.webp",
+          "alt": "Pavilion of Reflection — physical model 5"
+        },
+        {
+          "src": "/images/models/pavilion-of-reflection-slide-5.webp",
+          "alt": "Pavilion of Reflection — physical model 6"
+        },
+        {
+          "src": "/images/models/pavilion-of-reflection-slide-6.webp",
+          "alt": "Pavilion of Reflection — physical model 7"
+        },
+        {
+          "src": "/images/models/pavilion-of-reflection-slide-7.webp",
+          "alt": "Pavilion of Reflection — physical model 8"
+        }
+      ]
+    }
+  ],
+  "photography": [
+    {
+      "src": "/images/photography/film-01-20261006.webp",
+      "title": [
+        "Chengdu, Sichuan, China · 2025",
+        "中国 四川 成都 · 2025"
+      ],
+      "description": [
+        "The air back home is always mild and moist.",
+        "家乡的气候总是温润的"
+      ],
+      "sourceFile": "微信图片_20261004180306_142_46.jpg"
+    },
+    {
+      "src": "/images/photography/film-02-20261006.webp",
+      "title": [
+        "Chengdu, Sichuan, China · 2025",
+        "中国 四川 成都 · 2025"
+      ],
+      "description": [
+        "This is the place Pritzker Prize laureate Liu Jiakun described as somewhere he likes to “live beneath the bamboo, like a panda.” As someone from Chengdu, I wholeheartedly agree.",
+        "这里是普利茨克奖得主刘家琨形容的\"喜欢像熊猫一样在竹子下生活\"的地方,作为成都人我表示很赞同."
+      ],
+      "sourceFile": "微信图片_20261004180326_144_46.jpg"
+    },
+    {
+      "src": "/images/photography/film-03-20261006.webp",
+      "title": [
+        "Qinghai Lake, Qinghai, China · 2025",
+        "中国 青海 青海湖 · 2025"
+      ],
+      "description": [
+        "What lies at the end of the wilderness?\nPeople, still.\nAfter living in a city for so long, I sometimes forget that humans, too, are among the most resilient forms of life on this planet.",
+        "旷野荒原的尽头是什么?\n还是人们.\n在城市久住之后偶尔也会忘了人类也是这个地球上最顽强的生命."
+      ],
+      "sourceFile": "微信图片_20261004180310_143_46.jpg"
+    },
+    {
+      "src": "/images/photography/film-04-20261006.webp",
+      "title": [
+        "Jiayuguan, Gansu, China · 2025",
+        "中国 甘肃 嘉峪关 · 2025"
+      ],
+      "description": [
+        "I want to be the wind crossing the wilderness.",
+        "想做穿过旷野的风"
+      ],
+      "sourceFile": "微信图片_20261004180334_145_46.jpg"
+    },
+    {
+      "src": "/images/photography/film-05-20261006.webp",
+      "title": [
+        "The Hague, Netherlands · 2026",
+        "荷兰 海牙 · 2026"
+      ],
+      "description": [
+        "We went to see the sea together.\nA vast world, and tiny people.",
+        "我们一起去看海\n大大的世界和小小的人们"
+      ],
+      "sourceFile": "微信图片_20261004180342_147_46.jpg"
+    },
+    {
+      "src": "/images/photography/film-06-20261006.webp",
+      "title": [
+        "Amsterdam, Netherlands · 2026",
+        "荷兰 阿姆斯特丹 · 2026"
+      ],
+      "description": [
+        "A canal ferry.",
+        "运河轮渡"
+      ],
+      "sourceFile": "微信图片_20261004180349_150_46.jpg"
+    },
+    {
+      "src": "/images/photography/film-07-20261006.webp",
+      "title": [
+        "Barcelona, Spain · 2026",
+        "西班牙 巴塞罗那 · 2026"
+      ],
+      "description": [
+        "Less is more.",
+        "less is more"
+      ],
+      "sourceFile": "微信图片_20261004180420_152_46.jpg"
+    },
+    {
+      "src": "/images/photography/film-08-20261006.webp",
+      "title": [
+        "London, United Kingdom · 2026",
+        "英国 伦敦 · 2026"
+      ],
+      "description": [
+        "Like a quiet frame from a film.",
+        "像是电影里安静的一帧"
+      ],
+      "sourceFile": "微信图片_20261004180433_153_46.jpg"
+    },
+    {
+      "src": "/images/photography/film-09-20261006.webp",
+      "title": [
+        "London, United Kingdom · 2026",
+        "英国 伦敦 · 2026"
+      ],
+      "description": [
+        "I passed through an outpouring of passion and collective emotion.",
+        "路过了一场高浓度的热爱和集体情绪"
+      ],
+      "sourceFile": "微信图片_20261004180440_154_46.jpg"
+    },
+    {
+      "src": "/images/photography/film-10-20261006.webp",
+      "title": [
+        "Tenerife, Spain · 2026",
+        "西班牙 特内里费 · 2026"
+      ],
+      "description": [
+        "I think travelling solo in your twenties feels like an age of exploration in your own life.",
+        "我想二十多岁的solotrip像是人生的大航海时代"
+      ],
+      "sourceFile": "微信图片_20261004180504_155_46.jpg"
+    },
+    {
+      "src": "/images/photography/film-11-20261006.webp",
+      "title": [
+        "Tenerife, Spain · 2026",
+        "西班牙 特内里费 · 2026"
+      ],
+      "description": [
+        "When I realise I am alive in this radiant universe.",
+        "当我知道我活在这个灿烂的宇宙里"
+      ],
+      "sourceFile": "微信图片_20261004182210_160_46.jpg"
+    },
+    {
+      "src": "/images/photography/film-12-20261006.webp",
+      "title": [
+        "London, United Kingdom · 2026",
+        "英国 伦敦 · 2026"
+      ],
+      "description": [
+        "",
+        ""
+      ],
+      "sourceFile": "微信图片_20261004182233_162_46.jpg"
+    },
+    {
+      "src": "/images/photography/film-13-20261006.webp",
+      "title": [
+        "London, United Kingdom · 2026",
+        "英国 伦敦 · 2026"
+      ],
+      "description": [
+        "",
+        ""
+      ],
+      "sourceFile": "微信图片_20261004182235_163_46.jpg"
+    },
+    {
+      "src": "/images/photography/film-14-20261006.webp",
+      "title": [
+        "Coventry, United Kingdom · 2026",
+        "英国 考文垂 · 2026"
+      ],
+      "description": [
+        "I always feel there is an underlying warmth to film.",
+        "总感觉胶片的底色是温暖的"
+      ],
+      "sourceFile": "微信图片_20261004182239_165_46.jpg"
+    },
+    {
+      "src": "/images/photography/film-15-20261006.webp",
+      "title": [
+        "Berlin, Germany · 2026",
+        "德国 柏林 · 2026"
+      ],
+      "description": [
+        "",
+        ""
+      ],
+      "sourceFile": "微信图片_20261004182258_166_46.jpg"
+    },
+    {
+      "src": "/images/photography/film-16-20261006.webp",
+      "title": [
+        "London, United Kingdom · 2026",
+        "英国 伦敦 · 2026"
+      ],
+      "description": [
+        "",
+        ""
+      ],
+      "sourceFile": "微信图片_20261004182237_164_46.jpg"
+    }
+  ],
+  "films": [
+    {
+      "title": "BAMOR",
+      "src": "/videos/bamor-outcome-20261004.mp4",
+      "duration": 248,
+      "poster": "/images/bamor/cover.webp",
+      "links": [
+        {
+          "url": "/projects/bamor/",
+          "label": [
+            "View project",
+            "查看作品"
+          ]
+        }
+      ],
+      "year": "2026"
+    },
+    {
+      "title": "Digital Flora",
+      "src": "/videos/digital-flora-outcome-1.mp4",
+      "duration": 68,
+      "poster": "/images/digital-flora/cover.webp",
+      "links": [
+        {
+          "url": "/projects/digital-flora/",
+          "label": [
+            "View project",
+            "查看作品"
+          ]
+        }
+      ],
+      "year": "2026"
+    },
+    {
+      "title": "Urban Mycelium",
+      "src": "/videos/urban-mycelium-outcome-1.mp4",
+      "duration": 79,
+      "poster": "/images/urban-mycelium/cover-20261004-v2.webp",
+      "links": [
+        {
+          "url": "/projects/urban-mycelium/",
+          "label": [
+            "View project",
+            "查看作品"
+          ]
+        }
+      ],
+      "year": "2026"
+    },
+    {
+      "title": "Reflecting on Memory Patterns in the Post-Human Era: AI, Digital Space, and the Reconfiguration of Embodied Memory",
+      "src": "/videos/memory-patterns.mp4",
+      "duration": 239,
+      "poster": "/images/writing/memory-patterns.webp",
+      "year": "2025",
+      "links": [
+        {
+          "url": "/writing/#memory-patterns",
+          "label": [
+            "View paper",
+            "查看论文"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Moon Metabolism",
+      "src": "/videos/moon-village-outcome-1.mp4",
+      "duration": 170,
+      "poster": "/images/moon-village/cover.webp",
+      "links": [
+        {
+          "url": "/projects/moon-village/",
+          "label": [
+            "View project",
+            "查看作品"
+          ]
+        },
+        {
+          "url": "/writing/#lunar-settlement",
+          "label": [
+            "View paper",
+            "查看论文"
+          ]
+        }
+      ],
+      "year": "2024"
+    }
+  ],
+  "cvPreviews": [
+    "/images/cv-770f4fd91eaf.png"
+  ]
+}
