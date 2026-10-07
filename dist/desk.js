@@ -14,6 +14,15 @@ try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPref
 if(renderer) init().catch(()=>{stage.classList.add('has-error');loading.hidden=false;loading.textContent=say('The desk could not load. All pages are available using the top navigation.','书桌暂时无法加载，你仍可使用顶部导航访问全部页面。');});
 
 async function init(){
+ const introAssets=[];
+ const trackIntroImage=image=>{
+  if(!window.deskIntro?.active)return;
+  introAssets.push(new Promise(resolve=>{
+   image.addEventListener('load',()=>image.decode().then(()=>resolve(true),()=>resolve(false)),{once:true});
+   image.addEventListener('error',()=>resolve(false),{once:true});
+  }));
+ };
+
  renderer.setPixelRatio(Math.min(devicePixelRatio,1.8));
  renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.VSMShadowMap;
  renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor(0xffffff,1);
@@ -39,7 +48,7 @@ async function init(){
  const crop=(i,x,y,cw,ch)=>{const im=images[i];if(!im)return;const s=Math.max(cw/im.width,ch/im.height);ctx.save();ctx.filter=night?'brightness(.82)':'none';ctx.drawImage(im,(im.width-cw/s)/2,(im.height-ch/s)/2,cw/s,ch/s,x,y,cw,ch);ctx.restore();};
  ctx.fillStyle=night?'#f3f2ef':'#25292d';
  ctx.font='500 86px Arial';ctx.fillText(writing?'ESSAYS':'DESIGN',48,118);crop(0,48,168,446,418);crop(1,522,168,454,418);
- const sheen=ctx.createLinearGradient(0,0,w,h);sheen.addColorStop(0,'rgba(255,255,255,.045)');sheen.addColorStop(.55,'rgba(255,255,255,0)');ctx.fillStyle=sheen;ctx.fillRect(0,0,w,h);tx.needsUpdate=true;};screenDrawers.push(draw);draw();const sources=writing?['/images/writing/spatial-memory.webp','/images/writing/lunar-settlement.webp']:['/images/bamor/cover.webp','/images/digital-flora/cover.webp','/images/urban-mycelium/cover-20261004-v2.webp'];sources.forEach((src,i)=>{const im=new Image();im.onload=()=>{images[i]=im;draw();};im.src=src;});return tx;};
+ const sheen=ctx.createLinearGradient(0,0,w,h);sheen.addColorStop(0,'rgba(255,255,255,.045)');sheen.addColorStop(.55,'rgba(255,255,255,0)');ctx.fillStyle=sheen;ctx.fillRect(0,0,w,h);tx.needsUpdate=true;};screenDrawers.push(draw);draw();const sources=writing?['/images/writing/spatial-memory.webp','/images/writing/lunar-settlement.webp']:['/images/bamor/cover.webp','/images/digital-flora/cover.webp','/images/urban-mycelium/cover-20261004-v2.webp'];sources.forEach((src,i)=>{const im=new Image();trackIntroImage(im);im.onload=()=>{images[i]=im;draw();};im.src=src;});return tx;};
  new MutationObserver(()=>screenDrawers.forEach(draw=>draw())).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
  // Tiny shared surface maps add tactile response without high-resolution assets.
  const surfaceNoise=texture((ctx,w,h)=>{let seed=17;const im=ctx.createImageData(w,h);for(let i=0;i<im.data.length;i+=4){seed=(seed*1664525+1013904223)>>>0;const v=120+(seed%17);im.data.set([v,v,v,255],i);}ctx.putImageData(im,0,0);},128,128);surfaceNoise.wrapS=surfaceNoise.wrapT=THREE.RepeatWrapping;surfaceNoise.repeat.set(12,8);
@@ -93,7 +102,7 @@ async function init(){
  const about=item('about','04','About','关于','/about/',3.15,-.52,[.36,1.24,.08]);about.rotation.y=-.055;const frameFace=new THREE.Group();frameFace.rotation.x=-.16;about.add(frameFace);
  const frameMat=mat('#9c9486',.88);box(frameFace,.70,.96,.085,0,.50,0,frameMat);box(frameFace,.61,.87,.025,0,.50,.055,paper);
  const portraitMat=new THREE.MeshBasicMaterial({color:'#c6c8c8'});plane(frameFace,.53,.77,0,.50,.072,portraitMat);
- new THREE.TextureLoader().load('/images/about-portrait-20261006.webp',tx=>{tx.colorSpace=THREE.SRGBColorSpace;const target=.53/.77,ratio=tx.image.width/tx.image.height;if(ratio>target){tx.repeat.x=target/ratio;tx.offset.x=(1-tx.repeat.x)/2;}else{tx.repeat.y=ratio/target;tx.offset.y=(1-tx.repeat.y)/2;}portraitMat.map=tx;portraitMat.color.set('#ffffff');portraitMat.needsUpdate=true;});
+ introAssets.push(new THREE.TextureLoader().loadAsync('/images/about-portrait-20261006.webp').then(tx=>{tx.colorSpace=THREE.SRGBColorSpace;const target=.53/.77,ratio=tx.image.width/tx.image.height;if(ratio>target){tx.repeat.x=target/ratio;tx.offset.x=(1-tx.repeat.x)/2;}else{tx.repeat.y=ratio/target;tx.offset.y=(1-tx.repeat.y)/2;}portraitMat.map=tx;portraitMat.color.set('#ffffff');portraitMat.needsUpdate=true;return true;},()=>false));
  const support=box(about,.055,.64,.06,0,.30,-.27,frameMat);support.rotation.x=-.42;contact(root,3.15,-.52,.85,.55);
  // Supporting objects: procedural, replaceable independently of navigation groups.
  // Desktop arrangement: choose a species without replacing site content.
@@ -160,7 +169,7 @@ async function init(){
  projectSelect.addEventListener('change',()=>refreshWallImages(wallProjects.find(p=>p.slug===projectSelect.value)?.images[0]?.src||notes[editingNote].image));
  imageSelect.addEventListener('change',()=>{pendingWallImage=imageSelect.value;imagePreview.src=pendingWallImage;imagePreview.hidden=false;});
  const noteMeshes=[];let editingNote=0;const noteInput=noteDialog.querySelector('textarea'),noteStatus=noteDialog.querySelector('.note-status');
- function paintNote(i){const entry=notes[i],mesh=noteMeshes[i],ratio=i===0?1.25:i===1?1.2:1;const tx=texture((ctx,w,h)=>{ctx.fillStyle=i===2?'#e5dfc8':'#ece9e1';ctx.fillRect(0,0,w,h);ctx.fillStyle='#55534e';ctx.font=(i===2?'54px':'32px')+' Arial';const words=(entry.text||'').split(/\s+/);let line='',y=85;for(const word of words){const next=line?line+' '+word:word;if(ctx.measureText(next).width>w-70&&line){ctx.fillText(line,35,y);line=word;y+=(i===2?64:42);}else line=next;}ctx.fillText(line,35,y);},Math.round(512*ratio),512);mesh.material.map?.dispose();mesh.material.map=tx;mesh.material.needsUpdate=true;if(entry.image){const img=new Image(),src=entry.image;img.onload=()=>{if(notes[i].image!==src)return;const ctx=tx.image.getContext('2d'),w=tx.image.width,h=tx.image.height,scale=Math.min((w-28)/img.width,(h-28)/img.height);ctx.drawImage(img,(w-img.width*scale)/2,(h-img.height*scale)/2,img.width*scale,img.height*scale);tx.needsUpdate=true;};img.src=src;}}
+ function paintNote(i){const entry=notes[i],mesh=noteMeshes[i],ratio=i===0?1.25:i===1?1.2:1;const tx=texture((ctx,w,h)=>{ctx.fillStyle=i===2?'#e5dfc8':'#ece9e1';ctx.fillRect(0,0,w,h);ctx.fillStyle='#55534e';ctx.font=(i===2?'54px':'32px')+' Arial';const words=(entry.text||'').split(/\s+/);let line='',y=85;for(const word of words){const next=line?line+' '+word:word;if(ctx.measureText(next).width>w-70&&line){ctx.fillText(line,35,y);line=word;y+=(i===2?64:42);}else line=next;}ctx.fillText(line,35,y);},Math.round(512*ratio),512);mesh.material.map?.dispose();mesh.material.map=tx;mesh.material.needsUpdate=true;if(entry.image){const img=new Image(),src=entry.image;trackIntroImage(img);img.onload=()=>{if(notes[i].image!==src)return;const ctx=tx.image.getContext('2d'),w=tx.image.width,h=tx.image.height,scale=Math.min((w-28)/img.width,(h-28)/img.height);ctx.drawImage(img,(w-img.width*scale)/2,(h-img.height*scale)/2,img.width*scale,img.height*scale);tx.needsUpdate=true;};img.src=src;}}
  function openNote(i){editingNote=i;noteDialog.querySelector('select').value=String(i);noteInput.value=notes[i].text||'';noteStatus.textContent='';syncWallEditor();noteDialog.showModal();}
  noteDialog.querySelector('select').addEventListener('change',e=>{editingNote=Number(e.target.value);noteInput.value=notes[editingNote].text||'';noteStatus.textContent='';syncWallEditor();});
  function localizeNotes(){noteDialog.querySelectorAll('[data-en][data-zh]').forEach(el=>el.textContent=say(el.dataset.en,el.dataset.zh));}localizeNotes();new MutationObserver(localizeNotes).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
@@ -278,6 +287,18 @@ async function init(){
  reduced.addEventListener('change',updateReplay);new MutationObserver(updateReplay).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
  replay.addEventListener('click',()=>{if(reduced.matches)return;try{sessionStorage.removeItem('weiyi-desk-intro-seen-v3');}catch{return;}window.scrollTo(0,0);location.reload();});
  document.querySelector('.desk-caption').append(replay);
+ // Wait for actual decoded scene images and fonts before starting the four-second clock.
+ if(window.deskIntro?.active){
+  const daylight=new Image();trackIntroImage(daylight);
+  daylight.src=customImage||('/images/window-editorial-city-'+introPreference+'.webp');
+  const ready=await Promise.race([
+   Promise.all([...introAssets,document.fonts.ready.then(()=>true)]).then(results=>results.every(Boolean)),
+   new Promise(resolve=>setTimeout(()=>resolve(false),8000))
+  ]);
+  if(!ready)window.deskIntro.finish();
+  // Upload ready textures before the fullscreen pull-back begins.
+  renderer.render(scene,camera);
+ }
  // Project the existing screen geometry after the final responsive camera render.
  requestAnimationFrame(()=>requestAnimationFrame(()=>{
   const vertices=monitorScreen.geometry.attributes.position;

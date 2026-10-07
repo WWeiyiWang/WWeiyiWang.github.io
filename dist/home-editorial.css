@@ -16,3 +16,14 @@ body[data-page-en=Home] header{border-bottom:0;box-shadow:none;padding-top:28px;
 
 .wall-note-dialog{max-height:88dvh;overflow:auto}.wall-note-dialog select{width:100%;padding:9px;margin-top:7px;border:1px solid #ccc;background:#fff;color:#292b30;font:14px var(--font-ui)}.wall-image-preview{display:block;width:100%;height:145px;object-fit:contain;background:#f3f3f0;margin:10px 0}.wall-image-preview[hidden],.wall-project-preview[hidden]{display:none}.wall-project-preview{font:13px var(--font-ui);color:#5930f5}
 @media(min-width:761px){.desk-stage .flower-edit,.desk-stage .notes-edit,.desk-stage .window-edit{bottom:6px;background:#faf9f5eb!important}html[data-theme=night] .desk-stage .flower-edit,html[data-theme=night] .desk-stage .notes-edit,html[data-theme=night] .desk-stage .window-edit{background:#252c38eb!important}}
+
+/* Consistent phone controls in both themes, aligned on one baseline. */
+@media(max-width:760px){
+ .desk-stage .theme-switch{box-sizing:border-box;width:94px;height:34px;padding:7px 8px;font-size:11px;line-height:18px;white-space:nowrap}
+ .desk-stage .flower-edit,.desk-stage .notes-edit,.desk-stage .window-edit{box-sizing:border-box;bottom:8px;top:auto;width:33.333%;padding:10px 0;font-size:9px;line-height:16px;text-align:center;white-space:nowrap;transform:none}
+ .desk-stage .flower-edit{left:0;right:auto}
+ .desk-stage .notes-edit{left:33.333%;right:auto}
+ .desk-stage .window-edit{left:66.666%;right:auto}
+}
+
+@media(max-width:760px){html[data-theme] .desk-hotspot,html[data-theme] .desk-hotspot.desk-hotspot-primary{padding:5px 6px;gap:4px}}

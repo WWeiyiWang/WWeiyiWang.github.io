@@ -44,10 +44,10 @@
   document.addEventListener('visibilitychange', hidden);
   motion.addEventListener('change', finish);
   // Slow WebGL/assets must not hold visitors behind a loading curtain.
-  timer = setTimeout(finish, 2800);
+  timer = setTimeout(finish, 8000);
   document.addEventListener('DOMContentLoaded', () => {
     if (done) return;
-    clearTimeout(timer); timer = setTimeout(finish, 2200);
+    clearTimeout(timer); timer = setTimeout(finish, 8000);
     for (const el of document.body.children) {
       if (['SCRIPT','LINK','STYLE'].includes(el.tagName)) continue;
       inert.push([el, el.inert]); el.inert = true;
@@ -94,7 +94,17 @@
       canvasHome=canvas.parentNode;canvasNext=canvas.nextSibling;liveCanvas=canvas;
       canvas.style.width=w+'px';canvas.style.height=h+'px';
       frame.append(canvas);layer.append(frame);document.body.append(layer);
-      overlay.append(screen,name,identity);frame.append(overlay);
+      const mobileTitle = innerWidth <= 760;
+      overlay.append(screen,...(mobileTitle?[]:[name,identity]));frame.append(overlay);
+      let title;
+      if(mobileTitle){
+        // Draw at viewport resolution instead of magnifying tiny SVG glyphs on iOS.
+        title=document.createElement('div');title.classList.add('desk-intro-mobile-title');
+        title.setAttribute('aria-hidden','true');
+        const heading=document.createElement('div');heading.textContent='WEIYI WANG';
+        const subheading=document.createElement('div');subheading.textContent='ARCHITECTURE × TECHNOLOGY';
+        title.append(heading,subheading);layer.append(title);
+      }
       edgeBlur=document.createElement('div'); edgeBlur.classList.add('desk-intro-edge');
       edgeBlur.setAttribute('aria-hidden','true'); layer.append(edgeBlur);
       html.classList.replace('desk-intro-pending','desk-intro-playing');
@@ -102,7 +112,7 @@
       animate(canvas,frames,{duration,fill:'both'});
       animate(overlay,frames,{duration,fill:'both'});
       animate(screen,[{opacity:1,fill:'#080a0c'},{opacity:1,fill:'#141b22',offset:250/2050},{opacity:1,fill:'#141b22',offset:1900/2050},{opacity:0,fill:'#141b22'}],{duration:2050,fill:'both',easing:'ease-in-out'});
-      for(const text of [name,identity]) animate(text,[{opacity:0},{opacity:.85,offset:250/1900},{opacity:.85,offset:1750/1900},{opacity:0}],{duration:1900,fill:'both',easing:'ease-in-out'});
+      for(const text of (mobileTitle?[title]:[name,identity])) animate(text,[{opacity:0},{opacity:.85,offset:250/1900},{opacity:.85,offset:1750/1900},{opacity:0}],{duration:1900,fill:'both',easing:'ease-in-out'});
       animate(edgeBlur,[{opacity:0},{opacity:0,offset:1750/duration},{opacity:.7,offset:2050/duration},{opacity:0,offset:2500/duration},{opacity:0}],{duration,fill:'both',easing:'ease-in-out'});
       const crop=`inset(${rect.top}px ${Math.max(0,vw-rect.right)}px ${Math.max(0,vh-rect.bottom)}px ${rect.left}px)`;
       animate(layer,[{clipPath:'inset(0px)'},{clipPath:'inset(0px)',offset:2500/duration},{clipPath:crop,offset:revealAt/duration},{clipPath:crop}],{duration,fill:'both'});

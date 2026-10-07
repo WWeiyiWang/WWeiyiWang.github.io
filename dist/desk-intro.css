@@ -17,3 +17,11 @@
 .intro-replay{background:none;border:0;padding:4px 0;color:var(--muted);font:11px Arial,sans-serif;cursor:pointer}.intro-replay:hover{color:var(--accent)}.intro-replay:focus-visible{outline:2px solid var(--accent);outline-offset:4px}.intro-replay:disabled{opacity:.45;cursor:default}
 .desk-intro-playing body,.desk-intro-playing header,.desk-intro-playing #desk-stage{transition:background-color 1s ease-in-out,color 1s ease-in-out}
 .desk-caption{position:relative}.intro-replay{position:absolute;right:0;bottom:0}
+
+/* Mobile title stays in viewport pixels, outside the magnified scene raster. */
+.desk-intro-mobile-title{position:absolute;inset:0;z-index:6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;font:400 18px/1.4 Arial,sans-serif;letter-spacing:.22em;color:#d5d9dc;pointer-events:none}
+.desk-intro-mobile-title>div+div{font-size:9px;letter-spacing:.2em;color:#a8b0b8}
+@media(max-width:760px){.desk-intro-edge{display:none}}
+
+.desk-intro-pending body::after{content:'Loading studio…';position:fixed;inset:0;display:grid;place-items:center;color:#9299a1;font:11px Arial,sans-serif;letter-spacing:.08em;pointer-events:none}
+html[lang=zh-CN].desk-intro-pending body::after{content:'正在准备书桌…'}

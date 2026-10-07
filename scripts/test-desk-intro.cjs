@@ -32,7 +32,7 @@ test('reduced motion, repeat visits and blocked storage do not hide or animate c
  for(const options of [{seen:true},{reduced:true},{storageBlocked:true}]){const p=page(options);assert.equal(p.classes.size,0);assert.equal(p.context.deskIntro,undefined);}
 });
 test('slow assets reveal the normal homepage and cannot start a late animation',()=>{
- const p=page();p.emit('DOMContentLoaded');p.tick(2200);p.context.deskIntro.start(corners);assert.equal(p.classes.size,0);assert.equal(p.main.inert,false);assert.equal(p.animations.length,0);
+ const p=page();p.emit('DOMContentLoaded');p.tick(8000);p.context.deskIntro.start(corners);assert.equal(p.classes.size,0);assert.equal(p.main.inert,false);assert.equal(p.animations.length,0);
 });
 test('Escape, resize during playback, and backgrounding clean up all animation state',()=>{
  for(const event of ['keydown','resize','visibilitychange']){const p=page();p.emit('DOMContentLoaded');p.context.deskIntro.start(corners);if(event==='visibilitychange')p.document.hidden=true;p.emit(event,{key:'Escape',preventDefault(){}});assert.equal(p.classes.size,0);assert.equal(p.main.inert,false);assert(p.animations.every(a=>a.cancelled));}
@@ -51,4 +51,13 @@ test('temporary intro lighting never saves over manual preferences and waits for
  const src=fs.readFileSync('dist/desk.js','utf8');const body=src.slice(src.indexOf('async function chooseMood('),src.indexOf(' async function chooseImage('));
  const calls=[];const context={currentMood:'night',customImage:null,stage:{dataset:{}},document:{documentElement:{dataset:{}}},localStorage:{setItem(){calls.push('write');}},applyLamp:d=>calls.push('light:'+d),chooseImage:async()=>calls.push('window'),viewMat:{opacity:1},save:()=>true,status:{},say:x=>x};
  vm.runInNewContext(body+';this.chooseMood=chooseMood;',context);await context.chooseMood('day',false,1000);assert.deepEqual(calls,['window','light:1000']);assert.equal(context.currentMood,'day');
+});
+
+test('asset preparation time does not consume the four-second animation',()=>{
+ const p=page();p.emit('DOMContentLoaded');p.tick(5000);
+ assert(p.classes.has('desk-intro-pending'));
+ p.context.deskIntro.start(corners);
+ assert.equal(p.animations[0].options.duration,4000);
+ p.tick(3999);assert(p.classes.has('desk-intro-playing'));
+ p.tick(1);assert.equal(p.classes.size,0);
 });
