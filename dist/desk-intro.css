@@ -25,3 +25,7 @@
 
 .desk-intro-pending body::after{content:'Loading studio…';position:fixed;inset:0;display:grid;place-items:center;color:#9299a1;font:11px Arial,sans-serif;letter-spacing:.08em;pointer-events:none}
 html[lang=zh-CN].desk-intro-pending body::after{content:'正在准备书桌…'}
+
+body[data-page-en=Home] .desk-caption{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+body[data-page-en=Home] .desk-caption p{margin:0;min-width:0}
+body[data-page-en=Home] .intro-replay{position:static;flex-shrink:0;padding:0;line-height:1.7}

@@ -1,5 +1,6 @@
 import * as THREE from './vendor/three.module.min.js';
 import {citySVG} from './window-city.js';
+import {loadWallImage} from './wall-image.js';
 
 const stage=document.querySelector('#desk-stage');
 const canvas=document.querySelector('#desk-canvas');
@@ -53,6 +54,10 @@ async function init(){
  // Tiny shared surface maps add tactile response without high-resolution assets.
  const surfaceNoise=texture((ctx,w,h)=>{let seed=17;const im=ctx.createImageData(w,h);for(let i=0;i<im.data.length;i+=4){seed=(seed*1664525+1013904223)>>>0;const v=120+(seed%17);im.data.set([v,v,v,255],i);}ctx.putImageData(im,0,0);},128,128);surfaceNoise.wrapS=surfaceNoise.wrapT=THREE.RepeatWrapping;surfaceNoise.repeat.set(12,8);
  const wallMat=mat('#faf9f5',.98);wallMat.bumpMap=surfaceNoise;wallMat.bumpScale=.008;wallMat.emissive.set('#faf9f5');wallMat.emissiveIntensity=1.35;const wall=plane(root,40,18,0,5,-2.65,wallMat);wall.receiveShadow=true;wall.raycast=()=>{};
+ // Extend the backdrop below tall phone views so the clear-color strip never shows.
+ const wallPositions=wall.geometry.attributes.position;
+ for(let i=0;i<wallPositions.count;i++)if(wallPositions.getY(i)<0)wallPositions.setY(i,-40);
+ wallPositions.needsUpdate=true;wall.geometry.computeBoundingSphere();
  paper.bumpMap=surfaceNoise;paper.bumpScale=.003;silver.roughness=.38;silver.metalness=.55;dark.roughness=.62;
  const grain=texture((ctx,w,h)=>{ctx.fillStyle='#c9b89e';ctx.fillRect(0,0,w,h);for(let i=0;i<360;i++){ctx.strokeStyle=i%3?'#b4997815':'#f6e4c51b';ctx.lineWidth=.5+i%2;ctx.beginPath();const y=i*h/360;ctx.moveTo(0,y);ctx.bezierCurveTo(w*.3,y+Math.sin(i)*3,w*.7,y-2,w,y+1);ctx.stroke();}},1024,512);const deskWood=new THREE.MeshStandardMaterial({map:grain,roughness:.68,bumpMap:grain,bumpScale:.008});
  // A desk, rather than an enclosed room.
@@ -169,7 +174,17 @@ async function init(){
  projectSelect.addEventListener('change',()=>refreshWallImages(wallProjects.find(p=>p.slug===projectSelect.value)?.images[0]?.src||notes[editingNote].image));
  imageSelect.addEventListener('change',()=>{pendingWallImage=imageSelect.value;imagePreview.src=pendingWallImage;imagePreview.hidden=false;});
  const noteMeshes=[];let editingNote=0;const noteInput=noteDialog.querySelector('textarea'),noteStatus=noteDialog.querySelector('.note-status');
- function paintNote(i){const entry=notes[i],mesh=noteMeshes[i],ratio=i===0?1.25:i===1?1.2:1;const tx=texture((ctx,w,h)=>{ctx.fillStyle=i===2?'#e5dfc8':'#ece9e1';ctx.fillRect(0,0,w,h);ctx.fillStyle='#55534e';ctx.font=(i===2?'54px':'32px')+' Arial';const words=(entry.text||'').split(/\s+/);let line='',y=85;for(const word of words){const next=line?line+' '+word:word;if(ctx.measureText(next).width>w-70&&line){ctx.fillText(line,35,y);line=word;y+=(i===2?64:42);}else line=next;}ctx.fillText(line,35,y);},Math.round(512*ratio),512);mesh.material.map?.dispose();mesh.material.map=tx;mesh.material.needsUpdate=true;if(entry.image){const img=new Image(),src=entry.image;trackIntroImage(img);img.onload=()=>{if(notes[i].image!==src)return;const ctx=tx.image.getContext('2d'),w=tx.image.width,h=tx.image.height,scale=Math.min((w-28)/img.width,(h-28)/img.height);ctx.drawImage(img,(w-img.width*scale)/2,(h-img.height*scale)/2,img.width*scale,img.height*scale);tx.needsUpdate=true;};img.src=src;}}
+ function paintNote(i){const entry=notes[i],mesh=noteMeshes[i],ratio=i===0?1.25:i===1?1.2:1;const tx=texture((ctx,w,h)=>{ctx.fillStyle=i===2?'#e5dfc8':'#ece9e1';ctx.fillRect(0,0,w,h);ctx.fillStyle='#55534e';ctx.font=(i===2?'54px':'32px')+' Arial';const words=(entry.text||'').split(/\s+/);let line='',y=85;for(const word of words){const next=line?line+' '+word:word;if(ctx.measureText(next).width>w-70&&line){ctx.fillText(line,35,y);line=word;y+=(i===2?64:42);}else line=next;}ctx.fillText(line,35,y);},Math.round(512*ratio),512);mesh.material.map?.dispose();mesh.material.map=tx;mesh.material.needsUpdate=true;if(entry.image){
+ const src=entry.image;
+ const painted=loadWallImage(src).then(img=>{
+  // An older load must never overwrite an edited note or disposed texture.
+  if(notes[i].image!==src||mesh.material.map!==tx)return true;
+  const ctx=tx.image.getContext('2d'),w=tx.image.width,h=tx.image.height,scale=Math.min((w-28)/img.naturalWidth,(h-28)/img.naturalHeight);
+  ctx.drawImage(img,(w-img.naturalWidth*scale)/2,(h-img.naturalHeight*scale)/2,img.naturalWidth*scale,img.naturalHeight*scale);
+  tx.needsUpdate=true;mesh.material.needsUpdate=true;return true;
+ }).catch(()=>false);
+ if(window.deskIntro?.active)introAssets.push(painted);
+ }}
  function openNote(i){editingNote=i;noteDialog.querySelector('select').value=String(i);noteInput.value=notes[i].text||'';noteStatus.textContent='';syncWallEditor();noteDialog.showModal();}
  noteDialog.querySelector('select').addEventListener('change',e=>{editingNote=Number(e.target.value);noteInput.value=notes[editingNote].text||'';noteStatus.textContent='';syncWallEditor();});
  function localizeNotes(){noteDialog.querySelectorAll('[data-en][data-zh]').forEach(el=>el.textContent=say(el.dataset.en,el.dataset.zh));}localizeNotes();new MutationObserver(localizeNotes).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
@@ -224,10 +239,10 @@ async function init(){
  const header=document.querySelector('header'),heading=document.querySelector('.desk-heading'),caption=document.querySelector('.desk-caption');
  function fitViewport(){if(window.innerWidth>760){const reserved=header.getBoundingClientRect().height+heading.getBoundingClientRect().height+caption.getBoundingClientRect().height+12;stage.style.height=Math.max(220,window.innerHeight-reserved)+'px';}else stage.style.removeProperty('height');resize();}
  new ResizeObserver(resize).observe(stage);new ResizeObserver(fitViewport).observe(header);window.addEventListener('resize',fitViewport);fitViewport();
- canvas.addEventListener('wheel',e=>{const next=THREE.MathUtils.clamp(zoomTarget-e.deltaY*.0007,.9,1.1);if(next!==zoomTarget||e.ctrlKey){e.preventDefault();zoomTarget=next;}},{passive:false});
+ canvas.addEventListener('wheel',e=>{const next=THREE.MathUtils.clamp(zoomTarget-e.deltaY*.0007,.9,1.8);if(next!==zoomTarget||e.ctrlKey){e.preventDefault();zoomTarget=next;}},{passive:false});
  const touches=new Map();let pinchDistance=0;
  canvas.addEventListener('pointerdown',e=>{if(e.pointerType==='touch'){touches.set(e.pointerId,[e.clientX,e.clientY]);if(touches.size===2){drag=null;const p=[...touches.values()];pinchDistance=Math.hypot(p[0][0]-p[1][0],p[0][1]-p[1][1]);}}});
- canvas.addEventListener('pointermove',e=>{if(!touches.has(e.pointerId))return;touches.set(e.pointerId,[e.clientX,e.clientY]);if(touches.size===2){const p=[...touches.values()],d=Math.hypot(p[0][0]-p[1][0],p[0][1]-p[1][1]);zoomTarget=THREE.MathUtils.clamp(zoomTarget*d/Math.max(1,pinchDistance),.9,1.1);pinchDistance=d;drag=null;}});
+ canvas.addEventListener('pointermove',e=>{if(!touches.has(e.pointerId))return;touches.set(e.pointerId,[e.clientX,e.clientY]);if(touches.size===2){const p=[...touches.values()],d=Math.hypot(p[0][0]-p[1][0],p[0][1]-p[1][1]);zoomTarget=THREE.MathUtils.clamp(zoomTarget*d/Math.max(1,pinchDistance),.9,1.8);pinchDistance=d;drag=null;}});
  for(const type of ['pointerup','pointercancel'])canvas.addEventListener(type,e=>touches.delete(e.pointerId));
  const observer=new IntersectionObserver(([entry])=>visible=entry.isIntersecting);observer.observe(stage);
  // Resolve projected labels only on phones; desktop anchors remain unchanged.
