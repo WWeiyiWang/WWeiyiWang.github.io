@@ -52,10 +52,6 @@
       if (['SCRIPT','LINK','STYLE'].includes(el.tagName)) continue;
       inert.push([el, el.inert]); el.inert = true;
     }
-    skip = document.createElement('button');
-    skip.className = 'desk-intro-skip'; skip.type = 'button';
-    skip.textContent = html.lang === 'zh-CN' ? '跳过开场' : 'Skip intro';
-    skip.addEventListener('click', finish); document.body.append(skip);
   }, {once:true});
   window.deskIntro = {
     finish,
