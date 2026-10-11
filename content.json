@@ -23,39 +23,6 @@
         },
         {
           "title": [
-            "Tools",
-            "工具"
-          ],
-          "type": "text",
-          "text": [
-            "Rhino, Grasshopper, Python, ROS, Arduino IDE, OpenCV, MediaPipe, Aubio",
-            "Rhino, Grasshopper, Python, ROS, Arduino IDE, OpenCV, MediaPipe, Aubio"
-          ]
-        },
-        {
-          "title": [
-            "Research methods",
-            "研究方法"
-          ],
-          "type": "text",
-          "text": [
-            "Literature Review, Material Experimentation, Iterative Physical Prototyping, Kinematic Experimentation, Daylight Analysis, Computer Vision-Based Interaction, Real-Time Audio Analysis, Robotic Actuation Testing, Human–Environment Interaction Testing",
-            "Literature Review, Material Experimentation, Iterative Physical Prototyping, Kinematic Experimentation, Daylight Analysis, Computer Vision-Based Interaction, Real-Time Audio Analysis, Robotic Actuation Testing, Human–Environment Interaction Testing"
-          ]
-        },
-        {
-          "title": [
-            "My role",
-            "个人贡献"
-          ],
-          "type": "text",
-          "text": [
-            "Concept Development, Computational Design, Material Testing, Kinematic Prototyping, 3D Modelling & Visualisation, Daylight Simulation, Computer Vision Programming, Audio Signal Processing, Motor Control Programming, Hardware–Software Integration, Physical Fabrication",
-            "Concept Development, Computational Design, Material Testing, Kinematic Prototyping, 3D Modelling & Visualisation, Daylight Simulation, Computer Vision Programming, Audio Signal Processing, Motor Control Programming, Hardware–Software Integration, Physical Fabrication"
-          ]
-        },
-        {
-          "title": [
             "Drawings & outcomes",
             "图纸与成果"
           ],
@@ -103,6 +70,39 @@
                 }
               ]
             }
+          ]
+        },
+        {
+          "title": [
+            "Research methods",
+            "研究方法"
+          ],
+          "type": "text",
+          "text": [
+            "Literature Review, Material Experimentation, Iterative Physical Prototyping, Kinematic Experimentation, Daylight Analysis, Computer Vision-Based Interaction, Real-Time Audio Analysis, Robotic Actuation Testing, Human–Environment Interaction Testing",
+            "Literature Review, Material Experimentation, Iterative Physical Prototyping, Kinematic Experimentation, Daylight Analysis, Computer Vision-Based Interaction, Real-Time Audio Analysis, Robotic Actuation Testing, Human–Environment Interaction Testing"
+          ]
+        },
+        {
+          "title": [
+            "My role",
+            "个人贡献"
+          ],
+          "type": "text",
+          "text": [
+            "Concept Development, Computational Design, Material Testing, Kinematic Prototyping, 3D Modelling & Visualisation, Daylight Simulation, Computer Vision Programming, Audio Signal Processing, Motor Control Programming, Hardware–Software Integration, Physical Fabrication",
+            "Concept Development, Computational Design, Material Testing, Kinematic Prototyping, 3D Modelling & Visualisation, Daylight Simulation, Computer Vision Programming, Audio Signal Processing, Motor Control Programming, Hardware–Software Integration, Physical Fabrication"
+          ]
+        },
+        {
+          "title": [
+            "Tools",
+            "工具"
+          ],
+          "type": "text",
+          "text": [
+            "Rhino, Grasshopper, Python, ROS, Arduino IDE, OpenCV, MediaPipe, Aubio",
+            "Rhino, Grasshopper, Python, ROS, Arduino IDE, OpenCV, MediaPipe, Aubio"
           ]
         },
         {
@@ -160,28 +160,6 @@
         },
         {
           "title": [
-            "Tools",
-            "工具"
-          ],
-          "type": "text",
-          "text": [
-            "Arduino IDE, ROS 2",
-            "Arduino IDE, ROS 2"
-          ]
-        },
-        {
-          "title": [
-            "Research methods",
-            "研究方法"
-          ],
-          "type": "text",
-          "text": [
-            "Material Experimentation, Kinetic Prototyping, Interaction Testing",
-            "Material Experimentation, Kinetic Prototyping, Interaction Testing"
-          ]
-        },
-        {
-          "title": [
             "Process & experiments",
             "过程与实验"
           ],
@@ -229,6 +207,28 @@
           "type": "video",
           "src": "/videos/digital-flora-outcome-1.mp4",
           "poster": "/images/digital-flora/cover.webp"
+        },
+        {
+          "title": [
+            "Research methods",
+            "研究方法"
+          ],
+          "type": "text",
+          "text": [
+            "Material Experimentation, Kinetic Prototyping, Interaction Testing",
+            "Material Experimentation, Kinetic Prototyping, Interaction Testing"
+          ]
+        },
+        {
+          "title": [
+            "Tools",
+            "工具"
+          ],
+          "type": "text",
+          "text": [
+            "Arduino IDE, ROS 2",
+            "Arduino IDE, ROS 2"
+          ]
         }
       ],
       "cover": "/images/digital-flora/cover.webp",
@@ -270,28 +270,6 @@
         },
         {
           "title": [
-            "Tools",
-            "工具"
-          ],
-          "type": "text",
-          "text": [
-            "Blender · ZBrush · 8th Wall",
-            "Blender · ZBrush · 8th Wall"
-          ]
-        },
-        {
-          "title": [
-            "My role",
-            "个人贡献"
-          ],
-          "type": "text",
-          "text": [
-            "3D Modelling · AR Development · Video Production · Poster Design",
-            "3D Modelling · AR Development · Video Production · Poster Design"
-          ]
-        },
-        {
-          "title": [
             "Drawings & outcomes",
             "图纸与成果"
           ],
@@ -327,6 +305,28 @@
                 }
               ]
             }
+          ]
+        },
+        {
+          "title": [
+            "My role",
+            "个人贡献"
+          ],
+          "type": "text",
+          "text": [
+            "3D Modelling · AR Development · Video Production · Poster Design",
+            "3D Modelling · AR Development · Video Production · Poster Design"
+          ]
+        },
+        {
+          "title": [
+            "Tools",
+            "工具"
+          ],
+          "type": "text",
+          "text": [
+            "Blender · ZBrush · 8th Wall",
+            "Blender · ZBrush · 8th Wall"
           ]
         },
         {
@@ -377,17 +377,6 @@
           "text": [
             "Memory Museum explores how human memory has evolved alongside cultural and technological development. Beginning with Matteo Ricci’s Memory Palace and Bernard Stiegler’s theory of primary, secondary, and tertiary memory, the project translates different modes of remembering into architectural experiences.\n\nThree interconnected programmes—a government meeting space, a religious space, and an archaeological research institute—correspond respectively to immediate memory, long-term personal memory, and technologically externalised memory. Through overlapping programmes, shifting thresholds, material transitions, light, and different forms of exhibition, these abstract processes of memory are transformed into a continuous spatial narrative.\n\nRather than treating memory as something contained solely within the mind, the museum traces its transformation from immediate perception and personal recollection to externalised technological storage. Designed as an expandable structure extending towards the Meiguan Ancient Road, the architecture itself grows and accumulates over time, echoing the evolving nature of human memory.",
             "Memory Museum explores how human memory has evolved alongside cultural and technological development. Beginning with Matteo Ricci’s Memory Palace and Bernard Stiegler’s theory of primary, secondary, and tertiary memory, the project translates different modes of remembering into architectural experiences.\n\nThree interconnected programmes—a government meeting space, a religious space, and an archaeological research institute—correspond respectively to immediate memory, long-term personal memory, and technologically externalised memory. Through overlapping programmes, shifting thresholds, material transitions, light, and different forms of exhibition, these abstract processes of memory are transformed into a continuous spatial narrative.\n\nRather than treating memory as something contained solely within the mind, the museum traces its transformation from immediate perception and personal recollection to externalised technological storage. Designed as an expandable structure extending towards the Meiguan Ancient Road, the architecture itself grows and accumulates over time, echoing the evolving nature of human memory."
-          ]
-        },
-        {
-          "title": [
-            "Research methods",
-            "研究方法"
-          ],
-          "type": "text",
-          "text": [
-            "Literature Review, Theoretical Interpretation, Spatial Narrative Development",
-            "Literature Review, Theoretical Interpretation, Spatial Narrative Development"
           ]
         },
         {
@@ -471,6 +460,17 @@
               "alt": "Memory Museum — Drawings 7"
             }
           ]
+        },
+        {
+          "title": [
+            "Research methods",
+            "研究方法"
+          ],
+          "type": "text",
+          "text": [
+            "Literature Review, Theoretical Interpretation, Spatial Narrative Development",
+            "Literature Review, Theoretical Interpretation, Spatial Narrative Development"
+          ]
         }
       ],
       "subtitle": [
@@ -510,17 +510,6 @@
         },
         {
           "title": [
-            "Research methods",
-            "研究方法"
-          ],
-          "type": "text",
-          "text": [
-            "Climate Analysis, Parametric Kinetic Design, Shading Performance Analysis, Physical Prototyping",
-            "Climate Analysis, Parametric Kinetic Design, Shading Performance Analysis, Physical Prototyping"
-          ]
-        },
-        {
-          "title": [
             "Process & experiments",
             "过程与实验"
           ],
@@ -555,6 +544,17 @@
               "src": "/images/adaptive-facade/outcome-4.webp",
               "alt": "Adaptive Facade — Outcomes 4"
             }
+          ]
+        },
+        {
+          "title": [
+            "Research methods",
+            "研究方法"
+          ],
+          "type": "text",
+          "text": [
+            "Climate Analysis, Parametric Kinetic Design, Shading Performance Analysis, Physical Prototyping",
+            "Climate Analysis, Parametric Kinetic Design, Shading Performance Analysis, Physical Prototyping"
           ]
         }
       ],
@@ -608,28 +608,6 @@
         },
         {
           "title": [
-            "Research methods",
-            "研究方法"
-          ],
-          "type": "text",
-          "text": [
-            "Literature Review, Speculative Design, Environmental Analysis, Modular Design",
-            "Literature Review, Speculative Design, Environmental Analysis, Modular Design"
-          ]
-        },
-        {
-          "title": [
-            "My role",
-            "个人贡献"
-          ],
-          "type": "text",
-          "text": [
-            "Concept Development, Architectural Design, 3D Modelling, Architectural Drawings, Academic Writing",
-            "Concept Development, Architectural Design, 3D Modelling, Architectural Drawings, Academic Writing"
-          ]
-        },
-        {
-          "title": [
             "Drawings & outcomes",
             "图纸与成果"
           ],
@@ -669,6 +647,28 @@
                 }
               ]
             }
+          ]
+        },
+        {
+          "title": [
+            "Research methods",
+            "研究方法"
+          ],
+          "type": "text",
+          "text": [
+            "Literature Review, Speculative Design, Environmental Analysis, Modular Design",
+            "Literature Review, Speculative Design, Environmental Analysis, Modular Design"
+          ]
+        },
+        {
+          "title": [
+            "My role",
+            "个人贡献"
+          ],
+          "type": "text",
+          "text": [
+            "Concept Development, Architectural Design, 3D Modelling, Architectural Drawings, Academic Writing",
+            "Concept Development, Architectural Design, 3D Modelling, Architectural Drawings, Academic Writing"
           ]
         },
         {
@@ -722,17 +722,6 @@
         },
         {
           "title": [
-            "Research methods",
-            "研究方法"
-          ],
-          "type": "text",
-          "text": [
-            "Literature Review, Site Analysis, Interviews, Typological Studies, Design Experimentation",
-            "Literature Review, Site Analysis, Interviews, Typological Studies, Design Experimentation"
-          ]
-        },
-        {
-          "title": [
             "Process & experiments",
             "过程与实验"
           ],
@@ -767,6 +756,17 @@
               "src": "/images/generic-traditional/outcome-4.webp",
               "alt": "Generic & Traditional — Outcomes 4"
             }
+          ]
+        },
+        {
+          "title": [
+            "Research methods",
+            "研究方法"
+          ],
+          "type": "text",
+          "text": [
+            "Literature Review, Site Analysis, Interviews, Typological Studies, Design Experimentation",
+            "Literature Review, Site Analysis, Interviews, Typological Studies, Design Experimentation"
           ]
         }
       ],
@@ -805,39 +805,6 @@
           "text": [
             "This collaborative project combines modern robotic technology with parametric design, using Grasshopper-generated parametric curves to precisely construct a brick wall with a robotic arm. The design not only demonstrates the application of digital tools in architecture but also explores how to achieve precise construction and structural stability in complex curved forms. The efficiency and flexibility of the robotic arm offer unprecedented possibilities for architectural design, driving innovation in construction methods.",
             "This collaborative project combines modern robotic technology with parametric design, using Grasshopper-generated parametric curves to precisely construct a brick wall with a robotic arm. The design not only demonstrates the application of digital tools in architecture but also explores how to achieve precise construction and structural stability in complex curved forms. The efficiency and flexibility of the robotic arm offer unprecedented possibilities for architectural design, driving innovation in construction methods."
-          ]
-        },
-        {
-          "title": [
-            "Tools",
-            "工具"
-          ],
-          "type": "text",
-          "text": [
-            "Rhino, Grasshopper",
-            "Rhino, Grasshopper"
-          ]
-        },
-        {
-          "title": [
-            "Research methods",
-            "研究方法"
-          ],
-          "type": "text",
-          "text": [
-            "Parametric Design, Structural Analysis, Robotic Fabrication, Physical Prototyping",
-            "Parametric Design, Structural Analysis, Robotic Fabrication, Physical Prototyping"
-          ]
-        },
-        {
-          "title": [
-            "My role",
-            "个人贡献"
-          ],
-          "type": "text",
-          "text": [
-            "Parametric Modelling, Structural Simulation, Physical Assembly",
-            "Parametric Modelling, Structural Simulation, Physical Assembly"
           ]
         },
         {
@@ -961,6 +928,39 @@
         },
         {
           "title": [
+            "Research methods",
+            "研究方法"
+          ],
+          "type": "text",
+          "text": [
+            "Parametric Design, Structural Analysis, Robotic Fabrication, Physical Prototyping",
+            "Parametric Design, Structural Analysis, Robotic Fabrication, Physical Prototyping"
+          ]
+        },
+        {
+          "title": [
+            "My role",
+            "个人贡献"
+          ],
+          "type": "text",
+          "text": [
+            "Parametric Modelling, Structural Simulation, Physical Assembly",
+            "Parametric Modelling, Structural Simulation, Physical Assembly"
+          ]
+        },
+        {
+          "title": [
+            "Tools",
+            "工具"
+          ],
+          "type": "text",
+          "text": [
+            "Rhino, Grasshopper",
+            "Rhino, Grasshopper"
+          ]
+        },
+        {
+          "title": [
             "Collaborators",
             "合作者"
           ],
@@ -1010,17 +1010,6 @@
         },
         {
           "title": [
-            "Research methods",
-            "研究方法"
-          ],
-          "type": "text",
-          "text": [
-            "Site Analysis, Interviews, Typological Studies, Design Experimentation",
-            "Site Analysis, Interviews, Typological Studies, Design Experimentation"
-          ]
-        },
-        {
-          "title": [
             "Outcomes",
             "成果记录"
           ],
@@ -1046,6 +1035,17 @@
               "src": "/images/rural-plug-in/outcome-5.webp",
               "alt": "Farmland Plugin — Outcomes 5"
             }
+          ]
+        },
+        {
+          "title": [
+            "Research methods",
+            "研究方法"
+          ],
+          "type": "text",
+          "text": [
+            "Site Analysis, Interviews, Typological Studies, Design Experimentation",
+            "Site Analysis, Interviews, Typological Studies, Design Experimentation"
           ]
         }
       ],
@@ -1088,17 +1088,6 @@
         },
         {
           "title": [
-            "Research methods",
-            "研究方法"
-          ],
-          "type": "text",
-          "text": [
-            "Theoretical Interpretation, Site Analysis, Spatial Narrative Development",
-            "Theoretical Interpretation, Site Analysis, Spatial Narrative Development"
-          ]
-        },
-        {
-          "title": [
             "Outcomes",
             "成果记录"
           ],
@@ -1120,6 +1109,17 @@
               "src": "/images/underground-theater/outcome-4.webp",
               "alt": "Underground Theater — Outcomes 4"
             }
+          ]
+        },
+        {
+          "title": [
+            "Research methods",
+            "研究方法"
+          ],
+          "type": "text",
+          "text": [
+            "Theoretical Interpretation, Site Analysis, Spatial Narrative Development",
+            "Theoretical Interpretation, Site Analysis, Spatial Narrative Development"
           ]
         }
       ],

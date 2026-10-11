@@ -29,6 +29,12 @@ for(const project of content.projects){
   if(existing>=0)project.sections[existing]=section;
   else {const pos=project.sections.indexOf(brief)+1;project.sections.splice(pos,0,section);}
  }
+ // Keep supporting metadata after project media, immediately before collaborators.
+ const endTitles=['Research methods','My role','Tools'];
+ const endSections=endTitles.flatMap(title=>project.sections.filter(s=>s.title?.[0]===title));
+ project.sections=project.sections.filter(s=>!endTitles.includes(s.title?.[0]));
+ const collaborators=project.sections.findIndex(s=>s.title?.[0]==='Collaborators');
+ project.sections.splice(collaborators<0?project.sections.length:collaborators,0,...endSections);
  console.log(project.slug+': brief, subtitle, keywords and provided metadata synchronized');
 }
 fs.writeFileSync(file,JSON.stringify(content,null,2)+'\n');
