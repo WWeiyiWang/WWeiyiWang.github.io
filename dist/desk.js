@@ -300,7 +300,7 @@ async function init(){
  replay.textContent=say('Replay intro','重播开场');replay.disabled=reduced.matches;
  const updateReplay=()=>{replay.disabled=reduced.matches;replay.textContent=say('Replay intro','重播开场');};
  reduced.addEventListener('change',updateReplay);new MutationObserver(updateReplay).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
- replay.addEventListener('click',()=>{if(reduced.matches)return;try{sessionStorage.removeItem('weiyi-desk-intro-seen-v3');}catch{return;}window.scrollTo(0,0);location.reload();});
+ replay.addEventListener('click',()=>{if(reduced.matches)return;try{sessionStorage.removeItem('weiyi-desk-intro-seen-v3');}catch{return;}window.scrollTo({top:0,left:0,behavior:'instant'});location.reload();});
  document.querySelector('.desk-caption').append(replay);
  // Wait for actual decoded scene images and fonts before starting the four-second clock.
  if(window.deskIntro?.active){
