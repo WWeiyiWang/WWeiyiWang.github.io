@@ -1,0 +1,156 @@
+[
+  {
+    "title": [
+      "The Bartlett Autumn Show 2026 — Online",
+      "Bartlett 2026 秋季展 — 线上展览"
+    ],
+    "year": "2026",
+    "organizer": [
+      "The Bartlett School of Architecture, UCL",
+      "伦敦大学学院 Bartlett 建筑学院"
+    ],
+    "url": "https://autumn2026.bartlettarchucl.com/rc2-soft-robotic-architecture-2026/bamor",
+    "preview": "/images/autumn-show-2026-preview.png",
+    "credit": [
+      "Preview: official online exhibition homepage.",
+      "预览图：官方线上展览首页。"
+    ],
+    "linkLabel": [
+      "View BAMOR in the online exhibition ↗︎",
+      "查看 BAMOR 线上展览页面 ↗︎"
+    ]
+  },
+  {
+    "title": [
+      "The Bartlett Autumn Show 2026 — In person",
+      "Bartlett 2026 秋季展 — 线下展览"
+    ],
+    "year": "2026",
+    "organizer": [
+      "The Bartlett School of Architecture, UCL",
+      "伦敦大学学院 Bartlett 建筑学院"
+    ],
+    "url": "/projects/bamor/",
+    "preview": "/images/autumn-show-2026-rc2-display.jpg",
+    "previewWidth": 2000,
+    "previewHeight": 1500,
+    "previewAlt": [
+      "RC2 exhibition display at The Bartlett Autumn Show 2026",
+      "Bartlett 2026 秋季展 RC2 现场展陈"
+    ],
+    "linkLabel": [
+      "View BAMOR project →",
+      "查看 BAMOR 作品 →"
+    ],
+    "gallery": [
+      {
+        "src": "/images/autumn-show-2026-rc2-display.jpg",
+        "width": 2000,
+        "height": 1500,
+        "caption": [
+          "BAMOR — The Bartlett Autumn Show 2026, in-person exhibition.",
+          "BAMOR — Bartlett 2026 秋季展线下现场。"
+        ]
+      },
+      {
+        "src": "/images/autumn-show-2026-bamor-display.jpg",
+        "width": 1706,
+        "height": 960,
+        "caption": [
+          "BAMOR — The Bartlett Autumn Show 2026, in-person exhibition.",
+          "BAMOR — Bartlett 2026 秋季展线下现场。"
+        ]
+      },
+      {
+        "src": "/images/autumn-show-2026-portrait.jpg",
+        "width": 2000,
+        "height": 1326,
+        "caption": [
+          "BAMOR — The Bartlett Autumn Show 2026, in-person exhibition.",
+          "BAMOR — Bartlett 2026 秋季展线下现场。"
+        ]
+      },
+      {
+        "src": "/images/autumn-show-2026-installation.jpg",
+        "width": 1920,
+        "height": 1279,
+        "caption": [
+          "BAMOR — The Bartlett Autumn Show 2026, in-person exhibition.",
+          "BAMOR — Bartlett 2026 秋季展线下现场。"
+        ]
+      },
+      {
+        "src": "/images/autumn-show-2026-instant-photographs.jpg",
+        "width": 1440,
+        "height": 1081,
+        "caption": [
+          "BAMOR — The Bartlett Autumn Show 2026, in-person exhibition.",
+          "BAMOR — Bartlett 2026 秋季展线下现场。"
+        ]
+      }
+    ]
+  },
+  {
+    "title": [
+      "New Episode of Gusu: Design Across Boundaries",
+      "古城新章：设计无界限"
+    ],
+    "year": "",
+    "organizer": [
+      "Xi’an Jiaotong-Liverpool University Architecture Department Exhibition",
+      "西交利物浦大学建筑系学生作品展"
+    ],
+    "url": "https://mp.weixin.qq.com/s/rFh_Cn0tVdmIgYkZ-V4-tw",
+    "preview": "/images/gusu-exhibition-overview.jpg",
+    "previewWidth": 1280,
+    "previewHeight": 853,
+    "previewAlt": [
+      "Exhibition entrance and student work on display",
+      "展览入口与学生作品展陈"
+    ],
+    "linkLabel": [
+      "Read the exhibition article ↗︎",
+      "阅读展览报道 ↗︎"
+    ],
+    "projectLabel": [
+      "Exhibited works: Generic & Traditional · Parametric Robotic Construction",
+      "参展作品：Generic & Traditional · Parametric Robotic Construction"
+    ],
+    "gallery": [
+      {
+        "src": "/images/gusu-brick-wall.jpg",
+        "width": 1920,
+        "height": 1280,
+        "caption": [
+          "Parametric Robotic Construction — brick wall installation at the exhibition.",
+          "Parametric Robotic Construction — 砖墙作品展览现场。"
+        ],
+        "project": "parametric-robotic-construction",
+        "projectName": "Parametric Robotic Construction",
+        "wide": true
+      },
+      {
+        "src": "/images/gusu-generic-traditional.jpg",
+        "width": 1280,
+        "height": 1920,
+        "caption": [
+          "Generic & Traditional — exhibition boards and physical model.",
+          "Generic & Traditional — 展板与实体模型。"
+        ],
+        "project": "generic-traditional",
+        "projectName": "Generic & Traditional"
+      },
+      {
+        "src": "/images/gusu-presenting-work.jpg",
+        "width": 1276,
+        "height": 1276,
+        "caption": [
+          "Presenting my work to a tutor at the exhibition.",
+          "在展览现场向老师介绍我的作品。"
+        ],
+        "project": "generic-traditional",
+        "projectName": "Generic & Traditional"
+      }
+    ]
+  }
+]

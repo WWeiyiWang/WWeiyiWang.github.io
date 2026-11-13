@@ -6,7 +6,7 @@ const root=process.cwd(),dest=path.resolve('github-pages');
 if(!fs.existsSync(path.join(root,'网站资料')))throw new Error('Run this from the original portfolio website workspace. In a GitHub clone, commit and push directly.');
 if(path.dirname(dest)!==root)throw new Error('Publishing checkout must be inside the workspace');
 fs.mkdirSync(dest,{recursive:true});
-const sourceFiles=['build.mjs','content.json','desk-template.mjs','photography-template.mjs','wall-projects.mjs','README.md','.gitattributes','.github','scripts'];
+const sourceFiles=['build.mjs','content.json','exhibitions.json','desk-template.mjs','photography-template.mjs','wall-projects.mjs','README.md','.gitattributes','.github','scripts'];
 for(const name of sourceFiles)fs.cpSync(path.join(root,name),path.join(dest,name),{recursive:true});
 const pkg=JSON.parse(fs.readFileSync('package.json'));
 fs.writeFileSync(path.join(dest,'package.json'),JSON.stringify({name:pkg.name,private:true,type:'module',scripts:{build:pkg.scripts.build,'build:pages':pkg.scripts['build:pages'],'check:pages':pkg.scripts['check:pages']}},null,2)+'\n');

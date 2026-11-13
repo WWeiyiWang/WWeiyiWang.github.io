@@ -56,3 +56,21 @@ write('other-work/photography',shell('Photography','ABOUT',pageHead('','Photogra
 function cvEntry(e){const list=items=>items?.length?`<ul class="cv-bullets">${items.map(item=>t(...item,"li")).join("")}</ul>`:"";return `<article class="cv-entry">${e.date?`<span class="muted">${esc(e.date)}</span>`:""}${e.title?t(...e.title,"h3"):""}${e.organization?t(...e.organization,"p",'class="cv-organization"'):""}${e.description?t(...e.description,"p"):""}${list(e.bullets)}${e.outcomes?`${t("Research Outcomes:","研究成果：","h4")}${list(e.outcomes)}`:""}${e.url?link(e.url,e.url,e.url,'class="publication-link"'):""}</article>`;}
 
 function writingMedia(e){const caption=e.slug==="memory-patterns"?["Mind map","思维导图"]:["Conference photographs","会议照片"];return `<div class="writing-media-row">${e.video?`<a class="writing-video media-trigger" data-media="video" href="${esc(e.video)}" data-caption-en="${esc(e.title[0])}" data-caption-zh="${esc(e.title[1])}"><img src="${esc(e.cover)}" alt="${esc(e.title[0])}" loading="lazy"><span class="media-play">${t("Play film","播放视频")}</span></a>`:""}${(e.images||[]).map(src=>`<a class="media-trigger" href="${esc(src)}" data-media="image" data-caption-en="${caption[0]}" data-caption-zh="${caption[1]}"><img src="${esc(src)}" alt="${caption[0]}" loading="lazy"></a>`).join("")}</div>`;}
+
+// Exhibition links and covers are maintained locally in exhibitions.json.
+const exhibitions=JSON.parse(fs.readFileSync('exhibitions.json','utf8'));
+function exhibitionGallery(e){
+  if(!e.gallery?.length)return '';
+  const groups=[];
+  for(const im of e.gallery){
+    const previous=groups.at(-1);
+    if(im.project && previous?.[0].project===im.project)previous.push(im);
+    else groups.push([im]);
+  }
+  return `<div class="exhibition-gallery">${groups.map(group=>{
+    const first=group[0];
+    const width=group.reduce((sum,im)=>sum+Math.round(im.width/im.height*120),0)+(group.length-1)*20;
+    return `<figure style="width:${Math.max(120,width)}px"><div class="exhibition-photo-group">${group.map(im=>`<a class="media-trigger" data-media="image" href="${esc(im.src)}" data-caption-en="${esc(im.caption[0])}" data-caption-zh="${esc(im.caption[1])}"><img src="${esc(im.src)}" alt="${esc(im.caption[0])}" width="${im.width}" height="${im.height}" loading="lazy"></a>`).join('')}</div>${first.project?`<figcaption>${link('/projects/'+first.project+'/',first.projectName+' →',first.projectName+' →')}</figcaption>`:''}</figure>`;
+  }).join('')}</div>`;
+}
+write('exhibition',shell('Exhibition','',`<link rel="stylesheet" href="/media-viewer.css"><script defer src="/media-viewer.js"></script>`+pageHead('','Exhibition','展览')+`<div class="exhibition-list">${exhibitions.map(e=>`<article class="exhibition-entry"><a class="exhibition-preview" href="${esc(e.url)}" ${e.url.startsWith('/')?'':'target="_blank" rel="noopener noreferrer"'} aria-label="${esc(e.projectLabel?.[0]||e.title[0])}"><img src="${esc(e.preview)}" alt="${esc(e.previewAlt?.[0]||e.title[0]+' — online exhibition preview')}" width="${e.previewWidth||1280}" height="${e.previewHeight||720}"></a><div class="exhibition-content">${e.year?`<p class="eyebrow">${esc(e.year)}</p>`:''}<div class="exhibition-heading">${t(...e.title,'h2')}</div>${t(...e.organizer,'p','class="muted"')}${e.projectLabel?t(...e.projectLabel,'p','class="exhibition-project"'):''}${link(esc(e.url),...(e.linkLabel||['Visit online exhibition ↗︎','查看线上展览 ↗︎']),(e.url.startsWith('/')?'':'target="_blank" rel="noopener noreferrer" ')+'class="exhibition-visit"')}${e.credit?t(...e.credit,'p','class="exhibition-credit muted"'):''}${exhibitionGallery(e)}</div></article>`).join('')}</div>`));

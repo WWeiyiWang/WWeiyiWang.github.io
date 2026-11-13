@@ -99,3 +99,10 @@ h2,h3,h4,strong,b{font-weight:var(--weight-semibold)}
 .writing-content .writing-video{display:block;width:180px;max-width:100%;height:120px;object-fit:contain;margin-top:24px;background:transparent}.about-profile .prose + .prose{margin-top:1.85em}
 
 .collection-sort{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin:0 0 24px;font:400 13px var(--font-ui);color:var(--muted)}.collection-sort select{font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:0;padding:8px 28px 8px 10px;max-width:100%}.collection-sort select:focus-visible{outline:2px solid #5930F5;outline-offset:3px}
+
+/* Environment controls share the scene without intercepting drag or object links. */
+.desk-environments{position:absolute;top:16px;left:16px;z-index:5;display:flex;gap:3px;padding:3px;background:var(--bg,#fff);color:var(--text,#343638)}
+.desk-environments button{font:400 12px var(--font-ui,Arial);color:inherit;background:none;border:0;border-bottom:1px solid transparent;padding:7px 8px;cursor:pointer}
+.desk-environments button[aria-pressed=true]{border-bottom-color:currentColor}
+.desk-environments button:focus-visible{outline:2px solid #796496;outline-offset:2px}
+@media(max-width:760px){.desk-environments{top:12px;left:10px;max-width:calc(100% - 125px);flex-wrap:wrap}.desk-environments button{font-size:10px;padding:6px 4px}}
