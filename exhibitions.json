@@ -92,6 +92,65 @@
   },
   {
     "title": [
+      "Space Architecture Symposium — SAS Sydney 2025",
+      "太空建筑研讨会 — SAS Sydney 2025"
+    ],
+    "year": "2025",
+    "organizer": [
+      "The Red Centre, UNSW Kensington, Sydney · 4 October 2025",
+      "悉尼新南威尔士大学 Kensington 校区 The Red Centre · 2025 年 10 月 4 日"
+    ],
+    "url": "/projects/moon-village/",
+    "preview": "/images/sas-sydney-2025-official-poster.png",
+    "previewWidth": 1258,
+    "previewHeight": 858,
+    "previewFit": "contain",
+    "previewBackground": "#ffdb27",
+    "previewAlt": [
+      "SAS Sydney 2025 — official exhibition and symposium poster",
+      "SAS Sydney 2025 — 官方展览与研讨会海报"
+    ],
+    "projectLabel": [
+      "Moon Metabolism · Second Prize, Australian Space Architecture Challenge 2025",
+      "Moon Metabolism · 2025 澳大利亚太空建筑挑战赛二等奖"
+    ],
+    "linkLabel": [
+      "View Moon Metabolism →",
+      "查看 Moon Metabolism 作品 →"
+    ],
+    "source": "https://spacearchitect.org/space-architecture-symposium-sas-sydney-2025/",
+    "gallery": [
+      {
+        "src": "/images/sas-sydney-2025-exhibition.jpg",
+        "width": 1707,
+        "height": 1280,
+        "caption": [
+          "Moon Metabolism at the SAS Sydney 2025 exhibition.",
+          "Moon Metabolism 在 SAS Sydney 2025 的展览现场。"
+        ]
+      },
+      {
+        "src": "/images/sas-sydney-2025-moon-metabolism.jpg",
+        "width": 1022,
+        "height": 1362,
+        "caption": [
+          "Moon Metabolism — exhibition board.",
+          "Moon Metabolism — 展览展板。"
+        ]
+      },
+      {
+        "src": "/images/sas-sydney-2025-second-prize.jpg",
+        "width": 1280,
+        "height": 1707,
+        "caption": [
+          "Second Prize — Australian Space Architecture Challenge 2025.",
+          "2025 澳大利亚太空建筑挑战赛二等奖。"
+        ]
+      }
+    ]
+  },
+  {
+    "title": [
       "New Episode of Gusu: Design Across Boundaries",
       "古城新章：设计无界限"
     ],
