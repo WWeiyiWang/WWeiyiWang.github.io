@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "codex-collage",
+    "title": [
+      "Codex Collage",
+      "Codex 拼贴"
+    ],
+    "tool": "Codex",
+    "src": "/videos/experiments/codex-collage.mp4",
+    "poster": "/images/experiments/codex-collage.jpg"
+  },
+  {
+    "slug": "rain-all-night",
+    "title": [
+      "Rain All Night",
+      "雨下整夜"
+    ],
+    "tool": "p5.js",
+    "src": "/videos/experiments/rain-all-night.mp4",
+    "poster": "/images/experiments/rain-all-night.jpg"
+  },
+  {
+    "slug": "sea-carries-sorrow",
+    "title": [
+      "The Sea That Carries Sorrow Away",
+      "带走哀愁的海"
+    ],
+    "tool": "p5.js",
+    "src": "/videos/experiments/sea-carries-sorrow.mp4",
+    "poster": "/images/experiments/sea-carries-sorrow.jpg"
+  }
+]

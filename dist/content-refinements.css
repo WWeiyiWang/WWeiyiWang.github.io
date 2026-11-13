@@ -12,3 +12,18 @@
 .media-viewer-content img,.media-viewer-content video{min-height:0;max-height:calc(100% - 40px);width:auto;flex:0 1 auto}
 .media-viewer-caption{flex:none;margin:0;font:400 14px/1.4 var(--font-ui);text-align:center;color:#eee}
 @media(max-width:700px){.contact-social{width:100%;gap:16px}.contact-social>div{width:min(150px,calc((100% - 16px)/2))}.contact-social img{width:100%;height:auto;aspect-ratio:1}.writing-media-row{gap:14px}}
+
+/* About category previews share a square crop without altering other lists. */
+.about-work-previews section{display:grid;grid-template-columns:28px 180px minmax(0,1fr);gap:28px;align-items:center}
+.other-work-preview{display:block;width:100%;aspect-ratio:1;overflow:hidden}
+.other-work-preview img{display:block;width:100%;height:100%;object-fit:cover}
+.other-work-copy{min-width:0}
+@media(max-width:700px){.about-work-previews section{grid-template-columns:22px 110px minmax(0,1fr);gap:16px}.about-work-previews h2{font-size:24px}.other-work-copy p{font-size:14px}}
+@media(max-width:420px){.about-work-previews section{grid-template-columns:18px 86px minmax(0,1fr);gap:12px}.about-work-previews h2{font-size:21px;margin-bottom:10px}}
+
+.experiment-list{margin-bottom:90px}
+.experiment-list article{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;align-items:center;padding:28px 0;border-top:1px solid var(--line)}
+.experiment-preview{width:100%;aspect-ratio:1;overflow:hidden}
+.experiment-preview img{width:100%;height:100%;object-fit:cover}
+.experiment-list h2{font-size:28px;margin-top:12px}
+@media(max-width:600px){.experiment-list article{grid-template-columns:120px minmax(0,1fr);gap:20px}.experiment-list h2{font-size:22px}}
