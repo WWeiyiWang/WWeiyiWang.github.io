@@ -14,8 +14,8 @@
 /* Exhibition archive follows the compact Writing list. */
 .exhibition-list{max-width:1200px;margin:0 auto 80px}
 .exhibition-entry{display:grid;grid-template-columns:180px minmax(0,1fr);gap:32px;padding:28px 0 40px;border-top:1px solid var(--line)}
-.exhibition-preview{display:block;align-self:start;overflow:hidden}
-.exhibition-preview img{display:block;width:100%;height:auto}
+.exhibition-preview{display:block;align-self:start;overflow:hidden;aspect-ratio:1}
+.exhibition-preview img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
 .exhibition-content{min-width:0}
 .exhibition-content>.eyebrow{margin:0 0 14px}
 .exhibition-heading h2{margin:0;font-size:24px;line-height:1.45}
