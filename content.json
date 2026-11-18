@@ -35,7 +35,7 @@
               ],
               "type": "video",
               "src": "/videos/bamor-outcome-20261004.mp4",
-              "poster": "/images/bamor/cover.webp"
+              "poster": "/images/bamor/cover-ec8883dc5ade.webp"
             },
             {
               "title": [
@@ -117,11 +117,11 @@
           ]
         }
       ],
-      "cover": "/images/bamor/cover.webp",
+      "cover": "/images/bamor/cover-ec8883dc5ade.webp",
       "coverAlt": "BAMOR — project cover",
       "heroMotion": {
         "src": "/videos/bamor-hero.mp4",
-        "poster": "/images/bamor/cover.webp"
+        "poster": "/images/bamor/cover-ec8883dc5ade.webp"
       },
       "subtitle": [
         "Bamboo Actuated Morphology for Operative Response",
@@ -1827,7 +1827,7 @@
       "title": "BAMOR",
       "src": "/videos/bamor-outcome-20261004.mp4",
       "duration": 248,
-      "poster": "/images/bamor/cover.webp",
+      "poster": "/images/bamor/cover-ec8883dc5ade.webp",
       "links": [
         {
           "url": "/projects/bamor/",

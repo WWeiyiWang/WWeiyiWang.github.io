@@ -42,7 +42,7 @@ async function init(){
    images.forEach((img,i)=>{if(!img)return;const x=i?525:65,y=290,iw=425,ih=250,r=Math.max(iw/img.width,ih/img.height),sw=iw/r,sh=ih/r;ctx.save();ctx.filter=night?'brightness(0.65)':'none';ctx.drawImage(img,(img.width-sw)/2,(img.height-sh)/2,sw,sh,x,y,iw,ih);ctx.restore();});tx.needsUpdate=true;
   };
   screenDrawers.push(draw);draw();
-  const sources=title==='Writing'?['/home-current/images/writing/spatial-memory.webp','/home-current/images/writing/lunar-settlement.webp']:['/home-current/images/bamor/cover.webp','/home-current/images/digital-flora/cover.webp'];
+  const sources=title==='Writing'?['/home-current/images/writing/spatial-memory.webp','/home-current/images/writing/lunar-settlement.webp']:['/home-current/images/bamor/cover-ec8883dc5ade.webp','/home-current/images/digital-flora/cover.webp'];
   sources.forEach((src,i)=>{const img=new Image();img.onload=()=>{images[i]=img;draw();};img.src=src;});return tx;
  };
  new MutationObserver(()=>screenDrawers.forEach(draw=>draw())).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
