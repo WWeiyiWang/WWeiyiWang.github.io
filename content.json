@@ -1,5 +1,5 @@
 {
-  "cvPdf": "/files/Weiyi-Wang-CV-770f4fd91eaf.pdf",
+  "cvPdf": "/files/Weiyi-Wang-CV-70c8c64d5014.pdf",
   "projects": [
     {
       "slug": "bamor",
@@ -1157,6 +1157,12 @@
           "description": [
             "MArch Architectural Design (RC2 – Soft Robotic Architecture)",
             "建筑设计硕士（RC2 — 软体机器人建筑）。"
+          ],
+          "bullets": [
+            [
+              "Distinction",
+              "Distinction（优等成绩）"
+            ]
           ]
         },
         {
@@ -1191,24 +1197,36 @@
         {
           "bullets": [
             [
+              "Human–Robot Interaction",
+              "人机交互"
+            ],
+            [
+              "Tangible and Embodied Interaction",
+              "实体与具身交互"
+            ],
+            [
+              "Responsive Environments",
+              "响应式环境"
+            ],
+            [
+              "Human–Environment Interaction",
+              "人与环境交互"
+            ],
+            [
+              "Spatial Experience and Memory",
+              "空间体验与记忆"
+            ],
+            [
+              "Soft Robotics",
+              "软体机器人"
+            ],
+            [
+              "Computational Design",
+              "计算设计"
+            ],
+            [
               "Posthuman Architecture",
               "后人类建筑"
-            ],
-            [
-              "Interactive and Responsive Architecture",
-              "交互与响应式建筑"
-            ],
-            [
-              "Spatial Memory",
-              "空间记忆"
-            ],
-            [
-              "Emerging Architectural Technologies",
-              "新兴建筑技术"
-            ],
-            [
-              "Embodied Spatial Experience",
-              "具身空间体验"
             ]
           ]
         }
@@ -1384,8 +1402,8 @@
       "项目、写作与其他创作。"
     ],
     "about": [
-      "Weiyi Wang has a background in architecture, with interests spanning architectural design, emerging architectural technologies, and architectural theory. She is particularly interested in how technology participates in the design of space, and how its integration into architecture may reshape the ways people experience and remember space.\n\nShe received her undergraduate education in Architecture at Xi’an Jiaotong-Liverpool University and later pursued an MArch in Architectural Design at The Bartlett, UCL. Across design and research, she brings together spatial design, technological experimentation, and theoretical inquiry, exploring topics ranging from culture and memory and future habitats to computational design, responsive environments, and human–machine interaction.",
-      "王惟毅拥有建筑学背景。她的兴趣横跨建筑设计、新兴建筑技术与建筑理论，尤其关注技术如何参与空间设计，以及技术介入如何改变人们体验和记忆空间的方式。\n\n她本科毕业于西交利物浦大学建筑学专业，随后于伦敦大学学院巴特莱特建筑学院攻读建筑设计硕士。在设计与研究中，她结合空间设计、技术实验与理论思考，探索从文化与记忆、未来人居到计算设计、响应式环境与人机交互等不同议题。"
+      "Weiyi Wang has a background in architecture, with interests spanning architectural design, emerging architectural technologies, and architectural theory. She is particularly interested in how technology participates in the design of space, and how its integration into architecture may reshape the ways people experience and remember space.\n\nShe received her undergraduate education in Architecture at Xi'an Jiaotong-Liverpool University and later earned an MArch in Architectural Design from The Bartlett, UCL, where she studied in the Soft Robotic Architecture Research Cluster and graduated with Distinction. Across design and research, she brings together spatial design, technological experimentation, and theoretical inquiry, exploring topics ranging from culture, memory, and future habitats to computational design, responsive environments, and human–machine interaction.",
+      "王惟毅拥有建筑学背景。她的兴趣横跨建筑设计、新兴建筑技术与建筑理论，尤其关注技术如何参与空间设计，以及技术介入如何改变人们体验和记忆空间的方式。\n\n她本科毕业于西交利物浦大学建筑学专业，随后于伦敦大学学院巴特莱特建筑学院获得建筑设计硕士学位，硕士期间参与软体机器人建筑研究组，并以 Distinction 成绩毕业。在设计与研究中，她结合空间设计、技术实验与理论思考，探索从文化与记忆、未来人居到计算设计、响应式环境与人机交互等不同议题。"
     ],
     "photo": "/images/about-portrait-20261006.webp",
     "contact": {
@@ -1912,6 +1930,6 @@
     }
   ],
   "cvPreviews": [
-    "/images/cv-770f4fd91eaf.png"
+    "/images/cv-70c8c64d5014-1.png"
   ]
 }
